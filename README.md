@@ -1,6 +1,13 @@
 # RasPiSmartMirrorGUI (Python 3)
-_SmartMirror 
-for RaspberryPi_
+_SmartMirror for RaspberryPi_
+## Content
+| No. | Title | Status |
+| :--- | :--- | :---: |
+| 1. | [python3 installer](python3/setup_latest.sh) | finished |
+| 2. | [python3 GUI (0.3.1)](python3/SM_GUI_v0.3.1.minimal.py) | finished |
+| 3. | [html installer]() | work in progress |
+| 4. | [html python3 query]() | work in progress |
+| 5. | [html GUI]() | work in progress |
 ## About
 The SmartMirrorGUI uses python 3 (Im using 3.5.3) in combination with tkinter to display a black fullscreen with (not :P) useful things on it like the weather, the time and a random cartoon from Ruthe.de (or other if you configure it).
 
@@ -8,7 +15,7 @@ In future I want to display the outside/ inside temperature and the CPU temperat
 ## Installation
 ### Download setup.sh
 There are 3 ways to get the setup:
-- Download the latest setup [here](installer/setup_latest.sh).
+- Download the latest setup [here](python3/setup_latest.sh).
 - You can also just copy the text and paste it in any **\*.sh** file.
 - The third option is using **wget** (`wget https://github.com/Schn33W0lf/RasPiSmartMirrorOS/blob/master/installer/setup_latest.sh --output-document=/home/$USER/Downloads/SmartMirrorOS_installer.sh`)
 ### Required setup
@@ -21,10 +28,6 @@ There are 3 ways to get the setup:
 Basicly, you need the RaspberryPi 3 with a µSD-card and a power supply (I suggest to use the official one (5V_, 2.5A) because because of the voltage drop inside the Pi. More in the RPi Forum and [here](https://www.raspberrypi.org/documentation/hardware/raspberrypi/power/README.md)). Im using the RPi 3 B Rev 1.2
 
 Additionally you can solder a perfboard or just connect the status LED and switches with jumper wires. You can find circuit diagrams, plans and other infos [here](hardware)
-### Configuration
-in line 111 of /opt/SM_GUI_v0.3.1-py3.5-tk/SM_GUI_v0.3.1.minimal.py are some variables, eg the source of the weather widget.
-
-To configure the widget visit https://www.theweather.com/widget/. Look at [this](python3/examples/) pictures how you should configure the widget.
 ## Future plans:
 - [ ] I want to add 2 temperature sensors (inside temp. and outside temp.)
 - [ ] I want to display the CPU temperature
