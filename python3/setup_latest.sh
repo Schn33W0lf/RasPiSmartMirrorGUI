@@ -134,7 +134,7 @@ if [ $versionSelected -eq 1 ]; then
 	echo -e "python3 /opt/SM_GUI_v0.3.1-py3.5-tk/SM_GUI_v0.3.1.minimal.py\nsudo shutdown 0\n" >> /opt/SM_GUI_v0.3.1-py3.5-tk/SMstart.sh
 	echo "
 [CREATE] /opt/SM_GUI_v0.3.1-py3.5-tk/SM_v0.3.1.crontab"
-	echo "@reboot 'sh /opt/SM_GUI_v0.3.1-py3.5-tk/SMstart.sh" >> /opt/SM_GUI_v0.3.1-py3.5-tk/SM_v0.3.1.crontab
+	echo "@reboot sh /opt/SM_GUI_v0.3.1-py3.5-tk/SMstart.sh" >> /opt/SM_GUI_v0.3.1-py3.5-tk/SM_v0.3.1.crontab
 	echo "
 [USE]    crontab -u $USER /opt/SM_GUI_v0.3.1-py3.5-tk/SM_v0.3.1.crontab
          '@reboot 'sh /opt/SM_GUI_v0.3.1-py3.5-tk/SMstart.sh'
@@ -151,7 +151,7 @@ if [ $versionSelected -eq 1 ]; then
 	echo "
 [EDIT]   /boot/config.txt
          'display_rotate=3
-          # default     =0'
+          # default      =0'
          Rotate the display by 270°"
 	echo -e "\n\n# EDIT for SmartMirrorGUI\ndisplay_rotate=3\ndefault      =0\n" >> /boot/config.txt
 	echo "
