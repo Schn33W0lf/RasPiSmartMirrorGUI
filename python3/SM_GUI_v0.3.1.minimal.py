@@ -108,7 +108,7 @@ def queryGpio():
 loadGpio('BCM', False, [[2, 'IN'], [3, 'IN'], [4, 'IN'], [17, 'OUT'], [27, 'OUT']])
 statusLed(2)
 SmartMirrorGUI = Tk()
-SmartMirrorGUI.configs = [False, True, 0.75, 0.75, 0.1, 10, 20, 50, 'fotof62af6d4a7b74d49c1c46034432e36a4']                #[ maximised{bool} , fullscreen{bool} , windowWidth(%){float} , windowHeight(%){float} , versionNr{float} ]
+SmartMirrorGUI.configs = [False, True, 0.75, 0.75, 0.1, 10, 20, 50, 'foto99e83cda40fd2d3cd0a4d11485dffca2']                #[ maximised{bool} , fullscreen{bool} , windowWidth(%){float} , windowHeight(%){float} , versionNr{float} ]
 SmartMirrorGUI.settings = ['']
 SmartMirrorGUI.width = [SmartMirrorGUI.winfo_screenwidth(), SmartMirrorGUI.winfo_screenwidth()*SmartMirrorGUI.configs[2]]
 SmartMirrorGUI.height = [SmartMirrorGUI.winfo_screenheight(), SmartMirrorGUI.winfo_screenheight()*SmartMirrorGUI.configs[3]]
