@@ -10,6 +10,7 @@ function pythonLoadModules {
 		echo "          Error:         $1"
 	fi
 }
+pythonSource="https://raw.githubusercontent.com/Schn33W0lf/RasPiSmartMirrorOS/master/python3/SM_GUI_v0.3.1.minimal.py"
 versionSelected=1
 arrowOpt1L="==>"
 arrowOpt1R="<=="
@@ -83,7 +84,7 @@ $arrowOpt3L #            Exit            # $arrowOpt3R
 		fi
 	elif [ $versionSelect -eq 5 ]; then
 		if [ $versionSelected -eq 1 ]; then
-			pythonSource="https://gist.githubusercontent.com/Schn33W0lf/3953d3574ea75bb820fd020c888a8732/raw/9337a326b564677bc6ddd2d8223176362267c8bf/SM_GUI_v0.3.1.minimal.py"
+			break
 		elif [ $versionSelected -eq 2 ]; then
 			echo -e "\0033\0143#SETUP#SM#ABOUT#################################################################
      ##### ##### ##### #   # ####    ##### #   #   ##### ####  ##### #   # #####
@@ -103,7 +104,7 @@ $arrowOpt3L #            Exit            # $arrowOpt3R
        '/opt/SM_GUI_v0.3.1-py3.5-tk'
 [INFO] File sources:
 ###### Python 3
-'https://gist.githubusercontent.com/Schn33W0lf/3953d3574ea75bb820fd020c888a8732/raw/9337a326b564677bc6ddd2d8223176362267c8bf/SM_GUI_v0.3.1.minimal.py'
+'$pythonSource'
 ###### Folder (GitHub)
 
 		fi
@@ -126,7 +127,7 @@ if [ $versionSelected -eq 1 ]; then
 [CREATE] 'python3 /opt/SM_GUI_v0.3.1-py3.5-tk/SM_GUI_v0.3.1.minimal.py'
          '$pythonSource'
 	 Python script"
-	wget https://gist.githubusercontent.com/Schn33W0lf/3953d3574ea75bb820fd020c888a8732/raw/9337a326b564677bc6ddd2d8223176362267c8bf/SM_GUI_v0.3.1.minimal.py --output-document=/opt/SM_GUI_v0.3.1-py3.5-tk/SM_GUI_v0.3.1.minimal.py
+	wget $pythonSource --output-document=/opt/SM_GUI_v0.3.1-py3.5-tk/SM_GUI_v0.3.1.minimal.py
 	echo "
 [CREATE] '/opt/SM_GUI_v0.3.1-py3.5-tk/SMstart.sh'
          'python3 /opt/SM_GUI_v0.3.1-py3.5-tk/SM_GUI_v0.3.1.py
