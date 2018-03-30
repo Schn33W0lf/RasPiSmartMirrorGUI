@@ -83,9 +83,7 @@ $arrowOpt3L #            Exit            # $arrowOpt3R
 			arrowOpt3R="   "
 		fi
 	elif [ $versionSelect -eq 5 ]; then
-		if [ $versionSelected -eq 1 ]; then
-			break
-		elif [ $versionSelected -eq 2 ]; then
+		if [ $versionSelected -eq 2 ]; then
 			echo -e "\0033\0143#SETUP#SM#ABOUT#################################################################
      ##### ##### ##### #   # ####    ##### #   #   ##### ####  ##### #   # #####
     #     #       #   #   # #   #   #     ## ##   #   # #   # #   # #   #   #
@@ -105,7 +103,7 @@ $arrowOpt3L #            Exit            # $arrowOpt3R
 [INFO] File sources:
 ###### Python 3
 '$pythonSource'
-###### Folder (GitHub)
+###### Folder (GitHub)"
 
 		fi
 		break
@@ -188,5 +186,4 @@ elif [ $versionSelected -eq 3 ]; then
 	echo -e "\0033\0143exiting . . ."
 	sleep 1
 	echo -e "\0033\0143"
-
 fi
