@@ -1,7 +1,7 @@
 # RasPiSmartMirrorOS
 _SmartMirror OS for RaspberryPi_
 ## About
-The SmartMirrorGUI uses python 3 (Im using 3.5.3) in combination with tkinter to display a black fullscreen with (not :P) useful things on it like the weather, the time and a random cartoon from [Ruthe.de](ruthe.de) (or other if you configure it).
+The SmartMirrorGUI uses python 3 (Im using 3.5.3) in combination with tkinter to display a black fullscreen with (not :P) useful things on it like the weather, the time and a random cartoon from [Ruthe.de](http://ruthe.de) (or other if you configure it).
 
 In future I want to display the outside/ inside temperature and the CPU temperature (in °C).
 ## Installation
