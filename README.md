@@ -1,7 +1,6 @@
 # RasPiSmartMirrorOS
 SmartMirror OS for RaspberryPi
-  Installation:
-  Required setup:
-    Software:
-    Hardware:
-asdf
+## Installation:
+### Required setup:
+#### Software:
+#### Hardware:
