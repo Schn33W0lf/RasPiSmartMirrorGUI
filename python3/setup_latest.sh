@@ -131,7 +131,7 @@ if [ $versionSelected -eq 1 ]; then
          'python3 /opt/SM_GUI_v0.3.1-py3.5-tk/SM_GUI_v0.3.1.py
 	  sudo shutdown 0'
 	  start shell script"
-	echo -e "python3 /opt/SM_GUI_v0.3.1-py3.5-tk/SM_GUI_v0.3.1.minimal.py\nsudo shutdown 0\n" >> /opt/SM_GUI_v0.3.1-py3.5-tk/SMstart.sh
+	echo -e "python3 /opt/SM_GUI_v0.3.1-py3.5-tk/SM_GUI_v0.3.1.minimal.py\necho 'sudo shutdown 0'\n" >> /opt/SM_GUI_v0.3.1-py3.5-tk/SMstart.sh
 	echo "
 [CREATE] /opt/SM_GUI_v0.3.1-py3.5-tk/SM_v0.3.1.crontab"
 	echo "@reboot sh /opt/SM_GUI_v0.3.1-py3.5-tk/SMstart.sh" >> /opt/SM_GUI_v0.3.1-py3.5-tk/SM_v0.3.1.crontab
