@@ -6,11 +6,11 @@ The SmartMirrorGUI uses python 3 (Im using 3.5.3) in combination with tkinter to
 In future I want to display the outside/ inside temperature and the CPU temperature (in °C).
 ## Installation
 ### Download setup.sh
-Download the latest setup [here](installer/latest.sh).
+Download the latest setup [here](installer/setup_latest.sh).
 
 You can also just copy the text and paste it in any **\*.sh** file.
 
-The third option is using **wget** (`wget <URL> --output-document=/home/$USER/Downloads/SmartMirrorOS_installer.sh`)
+The third option is using **wget** (`wget https://github.com/Schn33W0lf/RasPiSmartMirrorOS/blob/master/installer/setup_latest.sh --output-document=/home/$USER/Downloads/SmartMirrorOS_installer.sh`)
 
 ### Required setup
 #### Software
