@@ -17,7 +17,7 @@ In future I want to display the outside/ inside temperature and the CPU temperat
 There are 3 ways to get the setup:
 - Download the latest setup [here](python3/setup_latest.sh).
 - You can also just copy the text and paste it in any **\*.sh** file.
-- The third option is using **wget** (`wget https://github.com/Schn33W0lf/RasPiSmartMirrorOS/blob/master/installer/setup_latest.sh --output-document=/home/$USER/Downloads/SmartMirrorOS_installer.sh`)
+- The third option is using **wget** (`wget https://raw.githubusercontent.com/Schn33W0lf/RasPiSmartMirrorOS/master/python3/setup_latest.sh --output-document=/home/$USER/Downloads/SmartMirrorOS_installer.sh`)
 ### Required setup
 #### Software
 1. Download an operating System. I have tested it with Noobs and Raspbian stretch.
