@@ -1,5 +1,6 @@
-# RasPiSmartMirrorOS (Python 3)
-_SmartMirror OS for RaspberryPi_
+# RasPiSmartMirrorGUI (Python 3)
+_SmartMirror 
+for RaspberryPi_
 ## About
 The SmartMirrorGUI uses python 3 (Im using 3.5.3) in combination with tkinter to display a black fullscreen with (not :P) useful things on it like the weather, the time and a random cartoon from Ruthe.de (or other if you configure it).
 
@@ -15,7 +16,7 @@ There are 3 ways to get the setup:
 1. Download an operating System. I have tested it with Noobs and Raspbian stretch.
 2. Make sure that your system boots automaticly in Desktop (and logging in) (`sudo raspi-config`, 3 Boot options, B4 Desktop Autologin)
 3. Download the installer
-4. run it as root (`sudo bash /path/to/SmartMirrorOS.sh`). **Important** is, that you use **sudo** and **bash**, not sh.
+4. run it as root (`sudo bash /path/to/SmartMirrorGUI.sh`). **Important** is, that you use **sudo** and **bash**, not sh.
 #### Hardware
 Basicly, you need the RaspberryPi 3 with a µSD-card and a power supply (I suggest to use the official one (5V_, 2.5A) because because of the voltage drop inside the Pi. More in the RPi Forum and [here](https://www.raspberrypi.org/documentation/hardware/raspberrypi/power/README.md)). Im using the RPi 3 B Rev 1.2
 
@@ -26,7 +27,7 @@ Additionally you can solder a perfboard or just connect the status LED and switc
 - [ ] I want to remote-control the py (eg for an audioplayer, ...)
 - [ ] I want to use a kind of sites in my py script (like [pagepiling](https://alvarotrigo.com/pagePiling/) [\[GitHub\]](https://github.com/alvarotrigo/pagePiling.js)).
 
-# HTML version of the SmartMirrorOS
+# HTML version of the SmartMirrorGUI
 The scripts arent very nice but here the schematic how it works
 ```
 GPIO in   GPIO out   remote contriol
