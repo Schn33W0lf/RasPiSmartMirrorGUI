@@ -37,7 +37,6 @@ GPIO in   GPIO out   remote contriol
               V
       HTML (& JS & CSS)
 ```
-You can find the files [here](html)
 - Download the pagepiling folder including the python 3 file _or_
 - Just download the html & python file and download the pagepiling files [here](https://github.com/alvarotrigo/pagePiling.js) and put the html/ py file in the folder
 - Also create a sh file with:
