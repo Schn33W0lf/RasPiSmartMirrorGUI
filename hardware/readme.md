@@ -1,3 +1,16 @@
+# GPIO Info
+| GPIO (BCM) Pin | GPIO (BOARD) Pin | used for |
+| --- | --- | --- |
+| 2 | 3 | S1 previous |
+| 3 | 5 | S2 reload |
+| 4 | 7 | S3 next |
+| +5V | 1 | power supply for 433MHz RF Module (and B1/B2/B3 - capacitive sensors instead of switches) |
+| +3.3V | 17 |  reference for the gpios (you can toggle it with the jumper) |
+| 0V | 6 | ground for the 433MHz RF Module |
+| 0V | 9 | reference for the gpios (you can toggle it with the jumper) and ground for the statusLED |
+| 17 | 11 | statusLED Red |
+| 27 | 13 | statusLED Green |
+| 22 | 15 | input 433MHz RF Module |
 # SmartMirrorHAT Part list
 | No. | Amount | Part description | details
 | --- | --- | --- | --- |
