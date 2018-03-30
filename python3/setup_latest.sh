@@ -131,7 +131,7 @@ if [ $versionSelected -eq 1 ]; then
          'python3 /opt/SM_GUI_v0.3.1-py3.5-tk/SM_GUI_v0.3.1.py
 	  sudo shutdown 0'
 	  start shell script"
-	echo -e "python3 /opt/SM_GUI_v0.3.1-py3.5-tk/SM_GUI_v0.3.1.py\nsudo shutdown 0\n" >> /opt/SM_GUI_v0.3.1-py3.5-tk/SMstart.sh
+	echo -e "python3 /opt/SM_GUI_v0.3.1-py3.5-tk/SM_GUI_v0.3.1.minimal.py\nsudo shutdown 0\n" >> /opt/SM_GUI_v0.3.1-py3.5-tk/SMstart.sh
 	echo "
 [CREATE] /opt/SM_GUI_v0.3.1-py3.5-tk/SM_v0.3.1.crontab"
 	echo "@reboot 'sh /opt/SM_GUI_v0.3.1-py3.5-tk/SMstart.sh" >> /opt/SM_GUI_v0.3.1-py3.5-tk/SM_v0.3.1.crontab
@@ -147,16 +147,13 @@ if [ $versionSelected -eq 1 ]; then
          '#SM_0.1.3# xserver-command=X
           xserver-command=X -s 0 dpms'
          Prevent display timeout"
-	sed -i 's/xserver-command=X/xserver-command=X -s 0 dpms/g' /etc/lightdm/lightdm.conf
+	sed -i 's/#xserver-command=X/xserver-command=X -s 0 dpms/g' /etc/lightdm/lightdm.conf
 	echo "
 [EDIT]   /boot/config.txt
          'display_rotate=3
           # default     =0'
          Rotate the display by 270°"
-	configOutput=$(cat /boot/config.txt)
-	configAdd='\n# EDIT for SmartMirrorGUI\ndisplay_rotate=3\ndefault      =0\n'
-	configInput=$configOutput$configAdd
-	sed -i 's/$configOutput/$configInput/g' /boot/config.txt
+	echo -e "\n\n# EDIT for SmartMirrorGUI\ndisplay_rotate=3\ndefault      =0\n" >> /boot/config.txt
 	echo "
 [LOAD]   Python 3"
 	if [ $(python3 -c "import sys;print(sys.version.split()[0])") != "bash: python3: command not found" ]; then
