@@ -140,11 +140,16 @@ if [ $versionSelected -eq 1 ]; then
          '@reboot 'sh /opt/SM_GUI_v0.3.1-py3.5-tk/SMstart.sh'
          Load SMstart.sh after boot"
 	crontab -u $USER /opt/SM_GUI_v0.3.1-py3.5-tk/SM_v0.3.1.crontab
-	#still testing... idk if this work
 	echo "
-[CMD]   xset s off
-        Disable screen saving / blank screen"
+[CMD]    export DISPLAY=:0.0
+         xset s off
+         xset s noblank
+         xset -dpms
+         Disable screen saving / blank screen"
+	export DISPLAY=:0.0
 	xset s off
+	xset s noblank
+	xset -dpms    
 	echo "
 [EDIT]   /boot/config.txt
          'display_rotate=3
