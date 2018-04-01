@@ -140,14 +140,11 @@ if [ $versionSelected -eq 1 ]; then
          '@reboot 'sh /opt/SM_GUI_v0.3.1-py3.5-tk/SMstart.sh'
          Load SMstart.sh after boot"
 	crontab -u $USER /opt/SM_GUI_v0.3.1-py3.5-tk/SM_v0.3.1.crontab
+	#still testing... idk if this work
 	echo "
-[EDIT]   /etc/lightdm/lightdm.conf
-         Line 91
-         'xserver-command=X'
-         '#SM_0.1.3# xserver-command=X
-          xserver-command=X -s 0 dpms'
-         Prevent display timeout"
-	sed -i 's/#xserver-command=X/xserver-command=X -s 0 dpms/g' /etc/lightdm/lightdm.conf
+[CMD]   xset s off
+        Disable screen saving / blank screen"
+	xset s off
 	echo "
 [EDIT]   /boot/config.txt
          'display_rotate=3
