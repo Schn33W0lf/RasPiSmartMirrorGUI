@@ -128,10 +128,9 @@ if [ $versionSelected -eq 1 ]; then
 	wget $pythonSource --output-document=/opt/SM_GUI_v0.3.1-py3.5-tk/SM_GUI_v0.3.1.minimal.py
 	echo "
 [CREATE] '/opt/SM_GUI_v0.3.1-py3.5-tk/SMstart.sh'
-         'python3 /opt/SM_GUI_v0.3.1-py3.5-tk/SM_GUI_v0.3.1.py
-	  sudo shutdown 0'
+         'python3 /opt/SM_GUI_v0.3.1-py3.5-tk/SM_GUI_v0.3.1.py'
 	  start shell script"
-	echo -e "python3 /opt/SM_GUI_v0.3.1-py3.5-tk/SM_GUI_v0.3.1.minimal.py\necho 'sudo shutdown 0'\n" >> /opt/SM_GUI_v0.3.1-py3.5-tk/SMstart.sh
+	echo -e "sleep 3\npython3 /opt/SM_GUI_v0.3.1-py3.5-tk/SM_GUI_v0.3.1.minimal.py" >> /opt/SM_GUI_v0.3.1-py3.5-tk/SMstart.sh
 	echo "
 [CREATE] /opt/SM_GUI_v0.3.1-py3.5-tk/SM_v0.3.1.crontab"
 	echo "@reboot sh /opt/SM_GUI_v0.3.1-py3.5-tk/SMstart.sh" >> /opt/SM_GUI_v0.3.1-py3.5-tk/SM_v0.3.1.crontab
