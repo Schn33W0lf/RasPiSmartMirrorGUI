@@ -1,5 +1,6 @@
 # RasPiSmartMirrorGUI (Python 3)
 _SmartMirror for RaspberryPi_
+**Important:** Actually crontab does'nt do what I want... Run python3 /opt/SM_GUI_v0.3.1-py3.5-tk/SM_GUI_v0.3.1.minimal.py manually.
 ## Content
 | No. | Title | Status |
 | :--- | :--- | :---: |
