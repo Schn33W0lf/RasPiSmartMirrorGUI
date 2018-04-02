@@ -55,7 +55,7 @@ def searchImg(url1, url2, rangeMin, rangeMax, debugInfos=False, fillZero=True):
         statusCode[1] += 1
     return url
 #gpioControl
-def loadGpio(gpioMode=None, setwarnings=False, pins=[[]], systemExit=False):
+def loadGpio(gpioMode=None, setwarnings=False, pins=[[]]):
     if gpioMode == 'BCM':
         IO.setmode(IO.BCM)
     elif gpioMode == 'BOARD':
@@ -72,8 +72,6 @@ def loadGpio(gpioMode=None, setwarnings=False, pins=[[]], systemExit=False):
         IO.setwarnings(setwarnings)
         for i in range(len(pins)):
             IO.cleanup(pins[i])
-        if systemExit == True:
-            raise SystemExit
     elif gpioMode == None or gpioMode == '':
         print('[WARNING] Mode unset. use \'BCM\' or \'BOARD\' or \'UNLOAD\'! setting mode \'',gpioMode,'\' because it was the default value.')
     else:
@@ -102,9 +100,6 @@ def statusLed(status=0, red=17, green=27):
             i = 0
             statusLed(0)
             print('[- statusLED-Test]')
-def queryGpio():
-    if IO.getmode == IO.BCM or IO.getmode  == IO.BOARD:
-        return [IO.input(2), IO.input(3), IO.input(4)]
 #main
 loadGpio('BCM', False, [[2, 'IN'], [3, 'IN'], [4, 'IN'], [17, 'OUT'], [27, 'OUT']])
 statusLed(2)
@@ -255,7 +250,8 @@ def gpioAction(switch):
         statusLed(1)
         sleep(1)
         statusLed(2)
-        loadGpio('CLEAN', False, [2, 3, 4, 27], True)
+        loadGpio('CLEAN', False, [2, 3, 4, 17, 27])
+        os.system('shutdown 0')
     elif switch == 3:
         SmartMirrorGUI.canvasImgWeather = createImg(SmartMirrorGUI, 'canvasImgWeather', 'https://www.theweather.com/wimages/fotof62af6d4a7b74d49c1c46034432e36a4.png', 'TK')
         SmartMirrorGUI.canvas.create_image(
