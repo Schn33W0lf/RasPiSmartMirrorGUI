@@ -137,13 +137,13 @@ if [ $versionSelected -eq 1 ]; then
 	  start shell script"
 	echo -e "sleep 3\npython3 /opt/SM_GUI_v0.3.1-py3.5-tk/SM_GUI_v0.3.1.minimal.py" >> /opt/SM_GUI_v0.3.1-py3.5-tk/SMstart.sh
 	echo "
-[CREATE] /opt/SM_GUI_v0.3.1-py3.5-tk/SM_v0.3.1.crontab"
-	echo "@reboot sh /opt/SM_GUI_v0.3.1-py3.5-tk/SMstart.sh" >> /opt/SM_GUI_v0.3.1-py3.5-tk/SM_v0.3.1.crontab
+[CREATE] /opt/SM_GUI_v0.3.1-py3.5-tk/SM.crontab"
+	echo "@reboot sh /opt/SM_GUI_v0.3.1-py3.5-tk/SMstart.sh" >> /opt/SM_GUI_v0.3.1-py3.5-tk/SM.crontab
 	echo "
-[USE]    crontab -u $userSelect /opt/SM_GUI_v0.3.1-py3.5-tk/SM_v0.3.1.crontab
+[USE]    crontab -u $userSelect /opt/SM_GUI_v0.3.1-py3.5-tk/SM.crontab
          '@reboot 'sh /opt/SM_GUI_v0.3.1-py3.5-tk/SMstart.sh'
          Load SMstart.sh after boot"
-	crontab -u $userSelect /opt/SM_GUI_v0.3.1-py3.5-tk/SM_v0.3.1.crontab
+	crontab -u $userSelect /opt/SM_GUI_v0.3.1-py3.5-tk/SM.crontab
 	echo "
 [EDIT]   /boot/config.txt
          'display_rotate=3
