@@ -117,7 +117,7 @@ if [ $versionSelected -eq 1 ]; then
       # #       #   #   # #           # #   #    # #  #   #    #       #
  ##### #####   #   ##### #       ##### #   #     #   ##### #  # # #####
 ##################################################################by#Schn33W0lf#"
-	read -p "Please write the user name for the SM GUI. leave blank vor the actual user (%USER): " userSelect
+	read -p "Please write the user name for the SM GUI. leave blank vor the actual user ($USER): " userSelect
 	echo "
 [CREATE] '/opt/SM_GUI_v0.3.1-py3.5-tk'
          SmartMirror directory"
