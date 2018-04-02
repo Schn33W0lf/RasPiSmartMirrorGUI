@@ -149,7 +149,7 @@ if [ $versionSelected -eq 1 ]; then
          'display_rotate=3
           # default      =0'
          Rotate the display by 270°"
-	echo -e "\n# EDIT for SmartMirrorGUI\ndisplay_rotate=3\ndefault      =0\n" >> /boot/config.txt
+	echo -e "\n# EDIT for SmartMirrorGUI\ndisplay_rotate=3\n#default      =0\n" >> /boot/config.txt
 	echo "
 [LOAD]   Python 3"
 	if [ $(python3 -c "import sys;print(sys.version.split()[0])") != "bash: python3: command not found" ]; then
