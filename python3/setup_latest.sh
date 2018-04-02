@@ -118,6 +118,9 @@ if [ $versionSelected -eq 1 ]; then
  ##### #####   #   ##### #       ##### #   #     #   ##### #  # # #####
 ##################################################################by#Schn33W0lf#"
 	read -p "Please write the user name for the SM GUI. leave blank vor the actual user ($USER): " userSelect
+	if [ $userSelect -eq "$USER" ]; then
+		userSelect="$USER"
+	fi
 	echo "
 [CREATE] '/opt/SM_GUI_v0.3.1-py3.5-tk'
          SmartMirror directory"
@@ -140,7 +143,7 @@ if [ $versionSelected -eq 1 ]; then
 [USE]    crontab -u $userSelect /opt/SM_GUI_v0.3.1-py3.5-tk/SM_v0.3.1.crontab
          '@reboot 'sh /opt/SM_GUI_v0.3.1-py3.5-tk/SMstart.sh'
          Load SMstart.sh after boot"
-	crontab -u $USER /opt/SM_GUI_v0.3.1-py3.5-tk/SM_v0.3.1.crontab
+	crontab -u $userSelect /opt/SM_GUI_v0.3.1-py3.5-tk/SM_v0.3.1.crontab
 	echo "
 [EDIT]   /boot/config.txt
          'display_rotate=3
