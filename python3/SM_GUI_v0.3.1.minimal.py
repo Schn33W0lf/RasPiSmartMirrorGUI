@@ -8,6 +8,7 @@ from requests import head
 from PIL import Image
 from PIL import ImageTk
 from pyspectator.processor import Cpu
+import os
 import PIL.Image
 import RPi.GPIO as IO
 if version_info[0] == 2:
