@@ -95,4 +95,5 @@ $(chromium-browser "file:///path/to/file.html";python3 /path/to/file.py)
 shutdown 0
 ```
 # BOT
+_Just ignore that, i didnt found a better way to scroll to the end of the site..._
 [_**Top**_](#top)
