@@ -25,6 +25,14 @@ There are 3 ways to get the setup:
 2. Make sure that your system boots automaticly in Desktop (and logging in) (`sudo raspi-config`, 3 Boot options, B4 Desktop Autologin)
 3. Download the installer
 4. run it as root (`sudo bash /path/to/SmartMirrorGUI.sh`). **Important** is, that you use **sudo** and **bash**, not sh.
+##### Configration (python)
+###### Weather widget:
+1. Open the python file (as root) and search for `SmartMirrorGUI.configs`. It should be in Line 108.
+2. Edit the last (`SmartMirrorGUI.configs[7]`) list item. By default it is `foto99e83cda40fd2d3cd0a4d11485dffca2`. Its the default weather image url.
+3. To edit visit https://www.theweather.com/widget/.
+4. Configure the widget like [this](python3/examples/SmartMirror_weather_example_config.png). It should look like [this](python3/examples/SmartMirror_weather_example.png).
+5. Enter your email and copy the last characters (after `https://www.theweather.com/wimages/`) of the link
+6. Paste it in the python script.
 #### Hardware
 Basicly, you need the RaspberryPi 3 with a µSD-card and a power supply (I suggest to use the official one (5V_, 2.5A) because because of the voltage drop inside the Pi. More in the RPi Forum and [here](https://www.raspberrypi.org/documentation/hardware/raspberrypi/power/README.md)). Im using the RPi 3 B Rev 1.2
 
