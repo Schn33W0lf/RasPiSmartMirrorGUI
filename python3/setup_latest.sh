@@ -97,7 +97,7 @@ $arrowOpt3L #            Exit            # $arrowOpt3R
        wget
        mkdir
        crontab
-       sed
+       echo
 [INFO] Destination folder:
        '/opt/SM_GUI_v0.3.1-py3.5-tk'
 [INFO] File sources:
