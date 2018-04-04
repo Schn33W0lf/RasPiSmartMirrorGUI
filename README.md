@@ -1,6 +1,8 @@
 # RasPiSmartMirrorGUI (Python 3)
 _SmartMirror for RaspberryPi_
+
 _**[Bottom](#html-version-of-the-smartmirrorgui)**_
+
 **Important:** Actually crontab does'nt do what I want... Run python3 /opt/SM_GUI_v0.3.1-py3.5-tk/SM_GUI_v0.3.1.minimal.py manually.
 ## Content
 | No. | Title | Status |                                            | No. | Title |
@@ -32,7 +34,7 @@ There are 3 ways to get the setup:
 2. Make sure that your system boots automaticly in Desktop (and logging in) (`sudo raspi-config`, 3 Boot options, B4 Desktop Autologin)
 3. Download the installer
 4. run it as root (`sudo bash /path/to/SmartMirrorGUI.sh`). **Important** is, that you use **sudo** and **bash**, not sh.
-##### Configration (python)
+##### Configuration (python)
 ###### Weather widget:
 1. Open the python file (as root) and search for `SmartMirrorGUI.configs`. It should be in Line 108.
 2. Edit the last (`SmartMirrorGUI.configs[7]`) list item. By default it is `foto99e83cda40fd2d3cd0a4d11485dffca2`. Its the default weather image url.
