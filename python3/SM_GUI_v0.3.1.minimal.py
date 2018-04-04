@@ -5,11 +5,10 @@ from base64 import encodebytes
 from io import BytesIO
 from random import randint
 from requests import head
-from PIL import Image
+import PIL
 from PIL import ImageTk
 from pyspectator.processor import Cpu
 import os
-import PIL.Image
 import RPi.GPIO as IO
 if version_info[0] == 2:
     from urllib2 import urlopen
@@ -157,7 +156,7 @@ SmartMirrorGUI.canvas.pack()
 SmartMirrorGUI.canvasImgWeather = createImg(SmartMirrorGUI, 'canvasImgWeather', ('https://www.theweather.com/wimages/'+SmartMirrorGUI.configs[7]+'.png'), 'TK')
 SmartMirrorGUI.canvas.create_image(
     SmartMirrorGUI.winfo_screenwidth()/2,
-    100,
+    120,
     image=SmartMirrorGUI.canvasImgWeather,
     anchor=CENTER
 )
@@ -165,13 +164,13 @@ SmartMirrorGUI.canvasImgRutheUrl = searchImg('http://ruthe.de/cartoons/strip_', 
 SmartMirrorGUI.canvasImgRuthe = createImg(SmartMirrorGUI, 'canvasImgWeather', SmartMirrorGUI.canvasImgRutheUrl, 'PIL', round(425*0.9), round(596*0.9))
 SmartMirrorGUI.canvas.create_image(
     SmartMirrorGUI.winfo_screenwidth()/2,
-    625,
+    645,
     image=SmartMirrorGUI.canvasImgRuthe,
     anchor=CENTER
 )
 SmartMirrorGUI.canvasImgRutheId = SmartMirrorGUI.canvas.create_text(
     round(SmartMirrorGUI.winfo_screenwidth()/2),
-    625+round(596/2*0.9)+20,
+    645+round(596/2*0.9)+20,
     fill='white',
     font=('Helvetica', 20),
     anchor=CENTER,
@@ -180,7 +179,7 @@ SmartMirrorGUI.canvasImgRutheId = SmartMirrorGUI.canvas.create_text(
 )
 SmartMirrorGUI.canvasTextTempOutside = SmartMirrorGUI.canvas.create_text(
     round(SmartMirrorGUI.winfo_screenwidth()/4),
-    625+round(596/2*0.9)+75,
+    645+round(596/2*0.9)+75,
     fill='white',
     font=('Helvetica', 20),
     anchor=CENTER,
@@ -189,7 +188,7 @@ SmartMirrorGUI.canvasTextTempOutside = SmartMirrorGUI.canvas.create_text(
 )
 SmartMirrorGUI.canvasTextTempInside = SmartMirrorGUI.canvas.create_text(
     round(SmartMirrorGUI.winfo_screenwidth()/4*2),
-    625+round(596/2*0.9)+75,
+    645+round(596/2*0.9)+75,
     fill='white',
     font=('Helvetica', 20),
     anchor=CENTER,
@@ -198,7 +197,7 @@ SmartMirrorGUI.canvasTextTempInside = SmartMirrorGUI.canvas.create_text(
 )
 SmartMirrorGUI.canvasTextTempCpu = SmartMirrorGUI.canvas.create_text(
     round(SmartMirrorGUI.winfo_screenwidth()/4*3),
-    625+round(596/2*0.9)+75,
+    645+round(596/2*0.9)+75,
     fill='white',
     font=('Helvetica', 20),
     anchor=CENTER,
@@ -215,13 +214,9 @@ SmartMirrorGUI.clock = Label(
 )
 SmartMirrorGUI.clock.place(
     relx=0.5,
-    y=275,
+    y=295,
     anchor='center'
 )
-print(round(SmartMirrorGUI.winfo_screenwidth()/2-SmartMirrorGUI.clock.winfo_width()*100/2))
-print(SmartMirrorGUI.winfo_screenwidth()/2-SmartMirrorGUI.clock.winfo_width()/2*100)
-print(SmartMirrorGUI.winfo_screenwidth()/2)
-print(SmartMirrorGUI.clock.winfo_width())
 def relayToTkinter(channel):
     if channel == 2:
         SmartMirrorGUI.event_generate('<<B1>>', when='tail')
@@ -251,7 +246,7 @@ def gpioAction(switch):
         statusLed(1)
         sleep(1)
         statusLed(2)
-        loadGpio('CLEAN', False, [2, 3, 4, 17, 27])
+        #loadGpio('CLEAN', False, [2, 3, 4, 17, 27])
         os.system('shutdown 0')
     elif switch == 3:
         SmartMirrorGUI.canvasImgWeather = createImg(SmartMirrorGUI, 'canvasImgWeather', 'https://www.theweather.com/wimages/fotof62af6d4a7b74d49c1c46034432e36a4.png', 'TK')
