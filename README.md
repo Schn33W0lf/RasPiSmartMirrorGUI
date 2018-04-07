@@ -1,6 +1,6 @@
 # RasPiSmartMirrorGUI (Python 3)
 _SmartMirror for RaspberryPi_<br>
-[_**\[Bottom\]**_](#bot)<br>
+[_**\[Bottom\]**_](#bottom)<br>
 **Important:** Actually crontab does'nt do what I want... Run python3 /opt/SM_GUI_v0.3.1-py3.5-tk/SM_GUI_v0.3.1.minimal.py manually.
 ## Content
 **_\[ [&uarr;](#top)_ / _[&darr;](#bot) \]_**<br>
@@ -81,6 +81,6 @@ $(chromium-browser "file:///path/to/file.html";python3 /path/to/file.py)
 #if the python file is stopped, execute the next command.
 shutdown 0
 ```
-# BOT
+# BOTTOM
 _Just ignore that, i didnt found a better way to scroll to the end of the site..._<br>
-[_**Top**_](#top)
+[_**\[Top\]**_](#top)
