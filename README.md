@@ -44,11 +44,7 @@ There are 3 ways to get the setup:
 1. Open the python file (as root) and search for `SmartMirrorGUI.configs`. It should be in Line 108.
 2. Edit the last (`SmartMirrorGUI.configs[7]`) list item. By default it is `foto99e83cda40fd2d3cd0a4d11485dffca2`. Its the default weather image url.
 3. To edit visit https://www.theweather.com/widget/.
-4. Configure the widget like
-[![this](python3/examples/SmartMirror_weather_example_config.png)](python3/examples/SmartMirror_weather_example_config.png)
-. It should look like
-[![this](python3/examples/SmartMirror_weather_example.png)](python3/examples/SmartMirror_weather_example.png)
-.
+4. Configure the widget like this:It should look like this:
 5. Enter your email and copy the last characters (after `https://www.theweather.com/wimages/`) of the link
 6. Paste it in the python script.
 #### Hardware
