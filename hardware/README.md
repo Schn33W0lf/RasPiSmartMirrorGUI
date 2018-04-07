@@ -25,4 +25,5 @@
 | 9. | 1 | Display panel (eg old laptop), driverboard (eBay or so), power supply and HDMI cable ||
 | 10. | 1 | Rpi power supply | 5.1V 2.5A |
 # Circuits & Plans
+## Circuit 1:
 [![circuit 1](SmartMirrorHAT-circuit.png)](SmartMirrorHAT-circuit.png)
