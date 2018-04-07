@@ -249,7 +249,7 @@ def gpioAction(switch):
         #loadGpio('CLEAN', False, [2, 3, 4, 17, 27])
         os.system('shutdown 0')
     elif switch == 3:
-        SmartMirrorGUI.canvasImgWeather = createImg(SmartMirrorGUI, 'canvasImgWeather', 'https://www.theweather.com/wimages/fotof62af6d4a7b74d49c1c46034432e36a4.png', 'TK')
+        SmartMirrorGUI.canvasImgWeather = createImg(SmartMirrorGUI, 'canvasImgWeather', ('https://www.theweather.com/wimages/'+SmartMirrorGUI.configs[7]+'.png'), 'TK')
         SmartMirrorGUI.canvas.create_image(
             SmartMirrorGUI.winfo_screenwidth()/2,
             100,
