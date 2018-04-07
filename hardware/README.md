@@ -24,3 +24,5 @@
 | 8. | 4 | PCB connectors and cables | [like those](https://www.reichelt.com/PCB-Connectors/PS-25-3W-BR/3/index.html?ACTION=3&GROUPID=7525&ARTICLE=14828) |
 | 9. | 1 | Display panel (eg old laptop), driverboard (eBay or so), power supply and HDMI cable ||
 | 10. | 1 | Rpi power supply | 5.1V 2.5A |
+# Circuits & Plans
+[![circuit 1](SmartMirrorHAT-circuit.png)](SmartMirrorHAT-circuit.png)
