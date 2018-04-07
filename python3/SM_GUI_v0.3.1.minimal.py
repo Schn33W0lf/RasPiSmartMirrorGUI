@@ -227,7 +227,7 @@ def relayToTkinter(channel):
 def gpioAction(switch):
     if switch == 1:
         SmartMirrorGUI.canvasImgRutheUrl = searchImg('http://ruthe.de/cartoons/strip_', '.jpg',0 , 9999, True, True)
-        SmartMirrorGUI.canvasImgRuthe = createImg(SmartMirrorGUI, 'canvasImgWeather', SmartMirrorGUI.canvasImgRutheUrl, 'PIL', round(425*0.9), round(596*0.9))
+        SmartMirrorGUI.canvasImgRuthe = createImg(SmartMirrorGUI, 'canvasImgRuthe', SmartMirrorGUI.canvasImgRutheUrl, 'PIL', round(425*0.9), round(596*0.9))
         SmartMirrorGUI.canvas.create_image(
             SmartMirrorGUI.winfo_screenwidth()/2,
             625,
