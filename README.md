@@ -3,20 +3,31 @@ _SmartMirror for RaspberryPi_<br>
 [_**\[Bottom\]**_](#bottom)<br>
 **Important:** Actually crontab does'nt do what I want... Run python3 /opt/SM_GUI_v0.3.1-py3.5-tk/SM_GUI_v0.3.1.minimal.py manually.
 ## Content
-**_\[ [&uarr;](#top)_ / _[&darr;](#bot) \]_**<br>
-| No. | Title | Status |                                            | No. | Title |
-| :--- | :--- | :---: | --- | :--- | :--- |
-| 1. | [python3 installer](python3/setup_latest.sh) | finished |    | 1. | [Content](#content) |
-| 2. | [python3 GUI (0.3.1)](python3/SM_GUI_v0.3.1.minimal.py) | finished | | 2. | [About](#about) |
-| 3. | [html installer]() | work in progress |                      | 3. | [Installation](#installation) |
-| 4. | [html python3 query]() | work in progress |                  | 4.1. | [Download setup.sh](#download-setupsh) |
-| 5. | [html GUI]() | work in progress |                            | 4.2. | [Required setup](#required-setup) |
-| | | |                                                             | 4.2.1. | [Software](#software) |
-| | | |                                                             | 4.2.1. | [Configuration (Python)](#configuration-python) |
-| | | |                                                             | 4.2.1.1. | [Weather Widget](#weather-widget) |
-| | | |                                                             | 4.2.2. | [Hardware](#hardware) |
-| | | |                                                             | 5. | [Future plans](#future-plans) |
-| | | |                                                             | 6. | [HTML Version](#html-version-of-the-smartmirrorgui) |
+**_\[ [&uarr;](#top)_ / _[&darr;](#bot) \]_**
+### Project
+| No. | Title | Status |
+| :--- | :--- | :---: |
+| 1. | [python3 installer](python3/setup_latest.sh) | finished |
+| 2. | [python3 GUI (0.3.1)](python3/SM_GUI_v0.3.1.minimal.py) | finished |
+| 3. | [html installer]() | work in progress |
+| 4. | [html python3 query]() | work in progress |
+| 5. | [html GUI]() | work in progress |
+### Documentation
+| No. | Title |
+| :--- | :--- |
+| 1. | [Content](#content) |
+| 1.1 | [Project](#project) |
+| 1.2 | [Documentation](#documentation) |
+| 2. | [About](#about) |
+| 3. | [Installation](#installation) |
+| 4.1. | [Download setup.sh](#download-setupsh) |
+| 4.2. | [Required setup](#required-setup) |
+| 4.2.1. | [Software](#software) |
+| 4.2.1. | [Configuration (Python)](#configuration-python) |
+| 4.2.1.1. | [Weather Widget](#weather-widget) |
+| 4.2.2. | [Hardware](#hardware) |
+| 5. | [Future plans](#future-plans) |
+| 6. | [HTML Version](#html-version-of-the-smartmirrorgui) |
 ## About
 **_\[ [&uarr;](#top)_ / _[&darr;](#bot) \]_**<br>
 The SmartMirrorGUI uses python 3 (Im using 3.5.3) in combination with tkinter to display a black fullscreen with (not :P) useful things on it like the weather, the time and a random cartoon from Ruthe.de (or other if you configure it).<br>
