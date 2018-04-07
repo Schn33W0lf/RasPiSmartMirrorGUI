@@ -5,6 +5,7 @@ _SmartMirror for RaspberryPi_<br>
 ## Content
 **_\[ [&uarr;](#top)_ / _[&darr;](#bot) \]_**
 ### Project
+**_\[ [&uarr;](#top)_ / _[&darr;](#bot) \]_**
 | No. | Title | Status |
 | :--- | :--- | :---: |
 | 1. | [python3 installer](python3/setup_latest.sh) | finished |
@@ -13,6 +14,7 @@ _SmartMirror for RaspberryPi_<br>
 | 4. | [html python3 query]() | work in progress |
 | 5. | [html GUI]() | work in progress |
 ### Documentation
+**_\[ [&uarr;](#top)_ / _[&darr;](#bot) \]_**
 | No. | Title |
 | :--- | :--- |
 | 1. | [Content](#content) |
