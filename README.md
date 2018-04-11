@@ -1,7 +1,8 @@
 # RasPiSmartMirrorGUI (Python 3)
 _SmartMirror for RaspberryPi_<br>
 [_**\[Bottom\]**_](#bottom)<br>
-**Important:** Actually crontab does'nt do what I want... Run python3 /opt/SM_GUI_v0.3.1-py3.5-tk/SM_GUI_v0.3.1.minimal.py manually.
+**Important:** Actually crontab does'nt do what I want... Run python3 /opt/SM_GUI_v0.3.1-py3.5-tk/SM_GUI_v0.3.1.minimal.py manually.\n
+Either, I have problems with the timeout of the dispay. Maybe its a problem of my display, maybe I looked for the wrong configs on the Pi.
 ## Content
 **_\[ [&uarr;](#top)_ / _[&darr;](#bottom) \]_**
 ### Project
@@ -11,6 +12,8 @@ _SmartMirror for RaspberryPi_<br>
 | :--- | :--- | :---: |
 | 1. | [python3 installer](python3/setup_latest.sh) | finished |
 | 2. | [python3 GUI (0.3.1)](python3/SM_GUI_v0.3.1.minimal.py) | finished |
+| 2. | [python3 GUI (0.3.2)](python3/SM_GUI_v0.3.2.minimal.py) | finished |
+| 2. | [python3 GUI (0.3.3)](python3/SM_GUI_v0.3.3.minimal.py) | finished |
 | 3. | [html installer]() | work in progress |
 | 4. | [html python3 query]() | work in progress |
 | 5. | [html GUI]() | work in progress |
