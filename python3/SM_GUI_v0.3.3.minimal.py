@@ -1,4 +1,5 @@
 # python3
+# SM GUI v 0.3.3 by Schn33W0lf
 from sys import version_info
 from time import sleep, strftime
 from base64 import encodebytes
