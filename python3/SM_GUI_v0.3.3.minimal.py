@@ -179,7 +179,7 @@ SmartMirrorGUI.canvasImgRutheId = SmartMirrorGUI.canvas.create_text(
 )
 SmartMirrorGUI.canvasTextTempOutside = SmartMirrorGUI.canvas.create_text(
     round(SmartMirrorGUI.winfo_screenwidth()/4),
-    645+round(596/2*0.9)+75,
+    675+round(596/2*0.9)+75,
     fill='white',
     font=('Helvetica', 20),
     anchor=CENTER,
@@ -188,7 +188,7 @@ SmartMirrorGUI.canvasTextTempOutside = SmartMirrorGUI.canvas.create_text(
 )
 SmartMirrorGUI.canvasTextTempInside = SmartMirrorGUI.canvas.create_text(
     round(SmartMirrorGUI.winfo_screenwidth()/4*2),
-    645+round(596/2*0.9)+75,
+    675+round(596/2*0.9)+75,
     fill='white',
     font=('Helvetica', 20),
     anchor=CENTER,
@@ -197,7 +197,7 @@ SmartMirrorGUI.canvasTextTempInside = SmartMirrorGUI.canvas.create_text(
 )
 SmartMirrorGUI.canvasTextTempCpu = SmartMirrorGUI.canvas.create_text(
     round(SmartMirrorGUI.winfo_screenwidth()/4*3),
-    645+round(596/2*0.9)+75,
+    675+round(596/2*0.9)+75,
     fill='white',
     font=('Helvetica', 20),
     anchor=CENTER,
