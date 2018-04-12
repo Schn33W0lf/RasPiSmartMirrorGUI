@@ -1,5 +1,5 @@
-# python3
-# SM GUI v 0.3.3 by Schn33W0lf
+# python3+
+#SM GUI v0.3.3 by Schn33W0lf
 from sys import version_info
 from time import sleep, strftime
 from base64 import encodebytes
@@ -55,8 +55,35 @@ def searchImg(url1, url2, rangeMin, rangeMax, debugInfos=False, fillZero=True):
             print('[DEBUG] Code: '+str(statusCode[0])+' | URL: '+url+' | Try: '+str(statusCode[1]))
         statusCode[1] += 1
     return url
+def tick():
+    time2 = strftime('%H:%M:%S%n%A, %d.%m.%Y')
+    if time2 != SmartMirrorGUI.settings[0]:
+        time1 = time2
+        SmartMirrorGUI.clock.config(text=time2)
+    # calls itself every 200 milliseconds to update the time display as needed
+    # could use >200 ms, but display gets jerky
+    SmartMirrorGUI.clock.after(200, tick)
+def toggleFullscreen(event):
+    SmartMirrorGUI.configs[1] = not SmartMirrorGUI.configs[1]
+    SmartMirrorGUI.attributes('-fullscreen', SmartMirrorGUI.configs[1])
+    SmartMirrorGUI.canvas.configure(width=SmartMirrorGUI.width[int(not SmartMirrorGUI.configs[1])], height=SmartMirrorGUI.height[int(not SmartMirrorGUI.configs[1])])
+    return 'break'
+def exitGUI(event):
+    SmartMirrorGUI.configs[1] = False
+    SmartMirrorGUI.attributes('-fullscreen', False)
+    SmartMirrorGUI.canvas.configure(width=SmartMirrorGUI.width[1], height=SmartMirrorGUI.height[1])
+    print('[DEBUG] Exiting . . .')
+    statusLed(2)
+    sleep(0.1)
+    statusLed(1)
+    sleep(0.1)
+    statusLed(2)
+    sleep(0.25)
+    statusLed(1)
+    sleep(1)
+    loadGpio('CLEAN', True, [2, 3, 4, 17, 27], True)
 #gpioControl
-def loadGpio(gpioMode=None, setwarnings=False, pins=[[]]):
+def loadGpio(gpioMode=None, setwarnings=False, pins=[[]], exitProgramm=False):
     if gpioMode == 'BCM':
         IO.setmode(IO.BCM)
     elif gpioMode == 'BOARD':
@@ -73,6 +100,9 @@ def loadGpio(gpioMode=None, setwarnings=False, pins=[[]]):
         IO.setwarnings(setwarnings)
         for i in range(len(pins)):
             IO.cleanup(pins[i])
+##  Not Working...
+##        if exitProgramm == True:
+##            raise SystemExit
     elif gpioMode == None or gpioMode == '':
         print('[WARNING] Mode unset. use \'BCM\' or \'BOARD\' or \'UNLOAD\'! setting mode \'',gpioMode,'\' because it was the default value.')
     else:
@@ -102,33 +132,56 @@ def statusLed(status=0, red=17, green=27):
             statusLed(0)
             print('[- statusLED-Test]')
 #main
+def relayToTkinter(channel):
+    if channel == 2:
+        SmartMirrorGUI.event_generate('<<B1>>', when='tail')
+    elif channel == 3:
+        SmartMirrorGUI.event_generate('<<B2>>', when='tail')
+    elif channel == 4:
+        SmartMirrorGUI.event_generate('<<B3>>', when='tail')
+def gpioAction(switch):
+    if switch == 1:
+        SmartMirrorGUI.canvasImgCartoonUrl = searchImg('http://ruthe.de/cartoons/strip_', '.jpg',0 , 9999, True, True)
+        SmartMirrorGUI.canvasImgCartoon = createImg(SmartMirrorGUI, 'canvasImgCartoon', SmartMirrorGUI.canvasImgCartoonUrl, 'PIL', round(SmartMirrorGUI.configs[6]), round(SmartMirrorGUI.configs[7]))
+        SmartMirrorGUI.canvas.create_image(
+            SmartMirrorGUI.winfo_screenwidth()/2,
+            685,
+            image=SmartMirrorGUI.canvasImgCartoon,
+            anchor=CENTER
+        )
+        SmartMirrorGUI.canvas.itemconfigure(SmartMirrorGUI.canvasImgCartoonId, text=SmartMirrorGUI.canvasImgCartoonUrl.split('_')[1].split('.jpg')[0])
+    elif switch == 2:
+        print('[DEBUG] Shutting down . . .')
+        statusLed(2)
+        sleep(0.1)
+        statusLed(1)
+        sleep(0.1)
+        statusLed(2)
+        sleep(0.25)
+        statusLed(1)
+        sleep(1)
+        statusLed(2)
+        #loadGpio('CLEAN', False, [2, 3, 4, 17, 27])
+        os.system('shutdown 0')
+    elif switch == 3:
+        SmartMirrorGUI.canvasImgWeather = createImg(SmartMirrorGUI, 'canvasImgWeather', ('https://www.theweather.com/wimages/'+SmartMirrorGUI.configs[5]+'.png'), 'TK')
+        SmartMirrorGUI.canvas.create_image(
+            SmartMirrorGUI.winfo_screenwidth()/2,
+            110,
+            image=SmartMirrorGUI.canvasImgWeather,
+            anchor=CENTER
+        )
+    else:
+        print('[WARNING] Error with GPIO Pins')
 loadGpio('BCM', False, [[2, 'IN'], [3, 'IN'], [4, 'IN'], [17, 'OUT'], [27, 'OUT']])
 statusLed(2)
 SmartMirrorGUI = Tk()
-SmartMirrorGUI.configs = [False, True, 0.75, 0.75, 0.3, "fotoec87866168722295911894ad441f5c42"]                #[ maximised{bool} , fullscreen{bool} , windowWidth(%){float} , windowHeight(%){float} , versionNr{float} ]
-SmartMirrorGUI.settings = ['']
+# [ bool(maximised) , bool(fullscreen) , float(windowWidth(%)) , float(windowHeight(%)) , float(versionNr) , str(weatherSource) , float(cartoonWidth) , float(cartoonHeight) ]
+SmartMirrorGUI.configs = [False, True, 0.75, 0.75, 0.3, "fotoec87866168722295911894ad441f5c42", 425*0.9 , 596*0.9]
+SmartMirrorGUI.settings = [True]
 SmartMirrorGUI.width = [SmartMirrorGUI.winfo_screenwidth(), SmartMirrorGUI.winfo_screenwidth()*SmartMirrorGUI.configs[2]]
 SmartMirrorGUI.height = [SmartMirrorGUI.winfo_screenheight(), SmartMirrorGUI.winfo_screenheight()*SmartMirrorGUI.configs[3]]
 SmartMirrorGUI.canvasSize = int(not SmartMirrorGUI.configs[1])
-def toggleFullscreen(event):
-    SmartMirrorGUI.configs[1] = not SmartMirrorGUI.configs[1]
-    SmartMirrorGUI.attributes('-fullscreen', SmartMirrorGUI.configs[1])
-    SmartMirrorGUI.canvas.configure(width=SmartMirrorGUI.width[int(not SmartMirrorGUI.configs[1])], height=SmartMirrorGUI.height[int(not SmartMirrorGUI.configs[1])])
-    return 'break'
-def exitGUI(event):
-    SmartMirrorGUI.configs[1] = False
-    SmartMirrorGUI.attributes('-fullscreen', False)
-    SmartMirrorGUI.canvas.configure(width=SmartMirrorGUI.width[1], height=SmartMirrorGUI.height[1])
-    print('[DEBUG] Exiting . . .')
-    statusLed(2)
-    sleep(0.1)
-    statusLed(1)
-    sleep(0.1)
-    statusLed(2)
-    sleep(0.25)
-    statusLed(1)
-    sleep(1)
-    loadGpio('CLEAN', True, [2, 3, 4, 17, 27], True)
 SmartMirrorGUI.bind('<F11>', toggleFullscreen)
 SmartMirrorGUI.bind('<Escape>', exitGUI)
 SmartMirrorGUI.title('SmartMirror v'+str(SmartMirrorGUI.configs[4])+' >> GUI')
@@ -154,33 +207,20 @@ SmartMirrorGUI.canvas = Canvas(
     highlightthickness=0
 )
 SmartMirrorGUI.canvas.pack()
-SmartMirrorGUI.canvasImgWeather = createImg(SmartMirrorGUI, 'canvasImgWeather', ('https://www.theweather.com/wimages/'+SmartMirrorGUI.configs[5]+'.png'), 'TK')
-SmartMirrorGUI.canvas.create_image(
-    SmartMirrorGUI.winfo_screenwidth()/2,
-    120,
-    image=SmartMirrorGUI.canvasImgWeather,
-    anchor=CENTER
-)
-SmartMirrorGUI.canvasImgRutheUrl = searchImg('http://ruthe.de/cartoons/strip_', '.jpg',0 , 9999, True, True)
-SmartMirrorGUI.canvasImgRuthe = createImg(SmartMirrorGUI, 'canvasImgWeather', SmartMirrorGUI.canvasImgRutheUrl, 'PIL', round(425*0.9), round(596*0.9))
-SmartMirrorGUI.canvas.create_image(
-    SmartMirrorGUI.winfo_screenwidth()/2,
-    645,
-    image=SmartMirrorGUI.canvasImgRuthe,
-    anchor=CENTER
-)
-SmartMirrorGUI.canvasImgRutheId = SmartMirrorGUI.canvas.create_text(
+SmartMirrorGUI.canvasImgCartoonId = SmartMirrorGUI.canvas.create_text(
     round(SmartMirrorGUI.winfo_screenwidth()/2),
-    645+round(596/2*0.9)+20,
+    685+round(SmartMirrorGUI.configs[7]/2)+20,
     fill='white',
     font=('Helvetica', 20),
     anchor=CENTER,
-    text=SmartMirrorGUI.canvasImgRutheUrl.split('_')[1].split('.jpg')[0],
+    text='Loading . . .',
     activefill='white'
 )
+gpioAction(3)
+gpioAction(1)
 SmartMirrorGUI.canvasTextTempOutside = SmartMirrorGUI.canvas.create_text(
     round(SmartMirrorGUI.winfo_screenwidth()/4),
-    675+round(596/2*0.9)+75,
+    685+round(SmartMirrorGUI.configs[7]/2)+75,
     fill='white',
     font=('Helvetica', 20),
     anchor=CENTER,
@@ -189,7 +229,7 @@ SmartMirrorGUI.canvasTextTempOutside = SmartMirrorGUI.canvas.create_text(
 )
 SmartMirrorGUI.canvasTextTempInside = SmartMirrorGUI.canvas.create_text(
     round(SmartMirrorGUI.winfo_screenwidth()/4*2),
-    675+round(596/2*0.9)+75,
+    685+round(SmartMirrorGUI.configs[7]/2)+75,
     fill='white',
     font=('Helvetica', 20),
     anchor=CENTER,
@@ -198,7 +238,7 @@ SmartMirrorGUI.canvasTextTempInside = SmartMirrorGUI.canvas.create_text(
 )
 SmartMirrorGUI.canvasTextTempCpu = SmartMirrorGUI.canvas.create_text(
     round(SmartMirrorGUI.winfo_screenwidth()/4*3),
-    675+round(596/2*0.9)+75,
+    685+round(SmartMirrorGUI.configs[7]/2)+75,
     fill='white',
     font=('Helvetica', 20),
     anchor=CENTER,
@@ -215,50 +255,9 @@ SmartMirrorGUI.clock = Label(
 )
 SmartMirrorGUI.clock.place(
     relx=0.5,
-    y=295,
+    y=310,
     anchor='center'
 )
-def relayToTkinter(channel):
-    if channel == 2:
-        SmartMirrorGUI.event_generate('<<B1>>', when='tail')
-    elif channel == 3:
-        SmartMirrorGUI.event_generate('<<B2>>', when='tail')
-    elif channel == 4:
-        SmartMirrorGUI.event_generate('<<B3>>', when='tail')
-def gpioAction(switch):
-    if switch == 1:
-        SmartMirrorGUI.canvasImgRutheUrl = searchImg('http://ruthe.de/cartoons/strip_', '.jpg',0 , 9999, True, True)
-        SmartMirrorGUI.canvasImgRuthe = createImg(SmartMirrorGUI, 'canvasImgRuthe', SmartMirrorGUI.canvasImgRutheUrl, 'PIL', round(425*0.9), round(596*0.9))
-        SmartMirrorGUI.canvas.create_image(
-            SmartMirrorGUI.winfo_screenwidth()/2,
-            625,
-            image=SmartMirrorGUI.canvasImgRuthe,
-            anchor=CENTER
-        )
-        SmartMirrorGUI.canvas.itemconfigure(SmartMirrorGUI.canvasImgRutheId, text=SmartMirrorGUI.canvasImgRutheUrl.split('_')[1].split('.jpg')[0])
-    elif switch == 2:
-        print('[DEBUG] Shutting down . . .')
-        statusLed(2)
-        sleep(0.1)
-        statusLed(1)
-        sleep(0.1)
-        statusLed(2)
-        sleep(0.25)
-        statusLed(1)
-        sleep(1)
-        statusLed(2)
-        #loadGpio('CLEAN', False, [2, 3, 4, 17, 27])
-        os.system('shutdown 0')
-    elif switch == 3:
-        SmartMirrorGUI.canvasImgWeather = createImg(SmartMirrorGUI, 'canvasImgWeather', ('https://www.theweather.com/wimages/'+SmartMirrorGUI.configs[5]+'.png'), 'TK')
-        SmartMirrorGUI.canvas.create_image(
-            SmartMirrorGUI.winfo_screenwidth()/2,
-            100,
-            image=SmartMirrorGUI.canvasImgWeather,
-            anchor=CENTER
-        )
-    else:
-        print('[WARNING] Error with GPIO Pins')
 IO.add_event_detect(2, IO.RISING, callback=relayToTkinter, bouncetime=300)
 IO.add_event_detect(3, IO.RISING, callback=relayToTkinter, bouncetime=300)
 IO.add_event_detect(4, IO.RISING, callback=relayToTkinter, bouncetime=300)
@@ -266,13 +265,5 @@ SmartMirrorGUI.bind("<<B1>>", lambda event:gpioAction(1))
 SmartMirrorGUI.bind("<<B2>>", lambda event:gpioAction(2))
 SmartMirrorGUI.bind("<<B3>>", lambda event:gpioAction(3))
 statusLed(1)
-def tick():
-    time2 = strftime('%H:%M:%S')
-    if time2 != SmartMirrorGUI.settings[0]:
-        time1 = time2
-        SmartMirrorGUI.clock.config(text=time2)
-    # calls itself every 200 milliseconds to update the time display as needed
-    # could use >200 ms, but display gets jerky
-    SmartMirrorGUI.clock.after(200, tick)
 tick()
 SmartMirrorGUI.mainloop()
