@@ -183,7 +183,7 @@ loadGpio('BCM', False, [[2, 'IN'], [3, 'IN'], [4, 'IN'], [17, 'OUT'], [27, 'OUT'
 statusLed(2)
 SmartMirrorGUI = Tk()
 # [ bool(maximised) , bool(fullscreen) , float(windowWidth(%)) , float(windowHeight(%)) , float(versionNr) , str(weatherSource) , float(cartoonWidth) , float(cartoonHeight) ]
-SmartMirrorGUI.configs = [False, True, 0.75, 0.75, 0.3, "fotoec87866168722295911894ad441f5c42", 425*0.9 , 596*0.9]
+SmartMirrorGUI.configs = [False, True, 0.75, 0.75, 0.3, 'fotoec87866168722295911894ad441f5c42', 425*0.9 , 596*0.9]
 SmartMirrorGUI.settings = [True, 'Loading. . .']
 SmartMirrorGUI.width = [SmartMirrorGUI.winfo_screenwidth(), SmartMirrorGUI.winfo_screenwidth()*SmartMirrorGUI.configs[2]]
 SmartMirrorGUI.height = [SmartMirrorGUI.winfo_screenheight(), SmartMirrorGUI.winfo_screenheight()*SmartMirrorGUI.configs[3]]
@@ -268,9 +268,9 @@ SmartMirrorGUI.clock.place(
 IO.add_event_detect(2, IO.RISING, callback=relayToTkinter, bouncetime=300)
 IO.add_event_detect(3, IO.RISING, callback=relayToTkinter, bouncetime=300)
 IO.add_event_detect(4, IO.RISING, callback=relayToTkinter, bouncetime=300)
-SmartMirrorGUI.bind("<<B1>>", lambda event:gpioAction(1))
-SmartMirrorGUI.bind("<<B2>>", lambda event:gpioAction(2))
-SmartMirrorGUI.bind("<<B3>>", lambda event:gpioAction(3))
+SmartMirrorGUI.bind('<<B1>>', lambda event:gpioAction(1))
+SmartMirrorGUI.bind('<<B2>>', lambda event:gpioAction(2))
+SmartMirrorGUI.bind('<<B3>>', lambda event:gpioAction(3))
 statusLed(1)
 tick()
 SmartMirrorGUI.mainloop()
