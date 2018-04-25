@@ -169,7 +169,6 @@ if [ $versionSelected -eq 1 ]; then
 	pythonLoadModules requests
 	pythonLoadModules PIL
 	pythonLoadModules PIL.Image
-	pythonLoadModules pyspectator
 	pythonLoadModules RPi.GPIO
 	pythonLoadModules urllib.request
 	pythonLoadModules tkinter
