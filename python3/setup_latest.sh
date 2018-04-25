@@ -10,7 +10,7 @@ function pythonLoadModules {
 		echo "          Error:         $1"
 	fi
 }
-pythonSource="https://raw.githubusercontent.com/Schn33W0lf/RasPiSmartMirrorOS/master/python3/SM_GUI_v0.3.1.minimal.py"
+pythonSource="https://raw.githubusercontent.com/Schn33W0lf/RasPiSmartMirrorOS/master/python3/SM_GUI_v0.3.4.minimal.py"
 versionSelected=1
 arrowOpt1L="==>"
 arrowOpt1R="<=="
