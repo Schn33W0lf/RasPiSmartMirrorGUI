@@ -54,7 +54,7 @@ There are 3 ways to get the setup:
 **_\[ [&uarr;](#top)_ / _[&darr;](#bottom) \]_**<br>
 #### Software
 **_\[ [&uarr;](#top)_ / _[&darr;](#bottom) \]_**<br>
-1. Download an operating System. I have tested it with Noobs » Raspbian[/[1/]](#footnote_1).
+1. Download an operating System. I have tested it with Noobs » Raspbian [[More Infos]](#footnote-1).
 2. Make sure that your system boots automaticly in Desktop (and logging in) (`sudo raspi-config`, 3 Boot options, B4 Desktop Autologin)
 3. Download the installer
 4. run it as root (`sudo bash /path/to/SmartMirrorGUI.sh`). **Important** is, that you use **sudo** and **bash**, not sh.
@@ -104,8 +104,10 @@ shutdown 0
 ```
 # Footnotes
 ###### Footnote-1
+```bash
 uname -a:
-```Linux raspberrypi 4.14.30-v7+ #1102 SMP Mon Mar 26 16:45:49 BST 2018 armv7l GNU/Linux```
+Linux raspberrypi 4.14.30-v7+ #1102 SMP Mon Mar 26 16:45:49 BST 2018 armv7l GNU/Linux
+```
 # BOTTOM
 _Just ignore that, i didnt found a better way to scroll to the end of the site..._<br>
 [_**\[Top\]**_](#top)
