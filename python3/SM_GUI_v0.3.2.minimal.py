@@ -104,7 +104,7 @@ def statusLed(status=0, red=17, green=27):
 loadGpio('BCM', False, [[2, 'IN'], [3, 'IN'], [4, 'IN'], [17, 'OUT'], [27, 'OUT']])
 statusLed(2)
 SmartMirrorGUI = Tk()
-SmartMirrorGUI.configs = [False, True, 0.75, 0.75, 0.3, "fotoec87866168722295911894ad441f5c42"]                #[ maximised{bool} , fullscreen{bool} , windowWidth(%){float} , windowHeight(%){float} , versionNr{float} ]
+SmartMirrorGUI.configs = [False, True, 0.75, 0.75, 0.3, "foto99e83cda40fd2d3cd0a4d11485dffca2"]                #[ maximised{bool} , fullscreen{bool} , windowWidth(%){float} , windowHeight(%){float} , versionNr{float} ]
 SmartMirrorGUI.settings = ['']
 SmartMirrorGUI.width = [SmartMirrorGUI.winfo_screenwidth(), SmartMirrorGUI.winfo_screenwidth()*SmartMirrorGUI.configs[2]]
 SmartMirrorGUI.height = [SmartMirrorGUI.winfo_screenheight(), SmartMirrorGUI.winfo_screenheight()*SmartMirrorGUI.configs[3]]
