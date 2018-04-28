@@ -183,7 +183,7 @@ loadGpio('BCM', False, [[2, 'IN'], [3, 'IN'], [4, 'IN'], [17, 'OUT'], [27, 'OUT'
 statusLed(2)
 SmartMirrorGUI = Tk()
 # [ bool(maximised) , bool(fullscreen) , float(windowWidth(%)) , float(windowHeight(%)) , float(versionNr) , str(weatherSource) , float(cartoonWidth) , float(cartoonHeight) ]
-SmartMirrorGUI.configs = [False, True, 0.75, 0.75, 0.3, 'fotoec87866168722295911894ad441f5c42', 425*0.9 , 596*0.9]
+SmartMirrorGUI.configs = [False, True, 0.75, 0.75, 0.3, 'foto99e83cda40fd2d3cd0a4d11485dffca2', 425*0.9 , 596*0.9]
 SmartMirrorGUI.settings = [True, 'Loading. . .']
 SmartMirrorGUI.width = [SmartMirrorGUI.winfo_screenwidth(), SmartMirrorGUI.winfo_screenwidth()*SmartMirrorGUI.configs[2]]
 SmartMirrorGUI.height = [SmartMirrorGUI.winfo_screenheight(), SmartMirrorGUI.winfo_screenheight()*SmartMirrorGUI.configs[3]]
