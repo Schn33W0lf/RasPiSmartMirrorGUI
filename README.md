@@ -8,15 +8,18 @@ Either, I have problems with the timeout of the dispay. Maybe its a problem of m
 ### Project
 **_\[ [&uarr;](#top)_ / _[&darr;](#bottom) \]_**
 
-| No. | Title | Status |
-| :--- | :--- | :---: |
-| 1. | [python3 installer](python3/setup_latest.sh) | finished |
-| 2. | [python3 GUI (0.3.1)](python3/SM_GUI_v0.3.1.minimal.py) | finished |
-| 2. | [python3 GUI (0.3.2)](python3/SM_GUI_v0.3.2.minimal.py) | finished |
-| 2. | [python3 GUI (0.3.3)](python3/SM_GUI_v0.3.3.minimal.py) | finished |
-| 3. | [html installer]() | work in progress |
-| 4. | [html python3 query]() | work in progress |
-| 5. | [html GUI]() | work in progress |
+| No. | Title | Status | Comment / Description |
+| :--- | :--- | :---: | :---: |
+| 1. | [python3 installer](python3/setup_latest.sh) | finished | v3.5 |
+| 2. | [python3 GUI (0.3.1)](python3/SM_GUI_v0.3.1.minimal.py) | finished | alpha |
+| 3. | [python3 GUI (0.3.2)](python3/SM_GUI_v0.3.2.minimal.py) | finished | alpha |
+| 4. | [python3 GUI (0.3.3)](python3/SM_GUI_v0.3.3.minimal.py) | finished | alpha |
+| 5. | [python3 GUI (0.3.4)](python3/SM_GUI_v0.3.4.minimal.py) | finished | beta |
+| 6. | [python3 GUI (0.3.5)](python3/SM_GUI_v0.3.5.minimal.py) | finished | beta |
+| 7. | [python3 GUI (0.3.6)](python3/SM_GUI_v0.3.6.minimal.py) | work in progress| ? |
+| 8. | [html installer]() | work in progress | ? |
+| 9. | [html python3 query]() | work in progress | ? |
+| 10. | [html GUI]() | work in progress | ? |
 ### Documentation
 **_\[ [&uarr;](#top)_ / _[&darr;](#bottom) \]_**
 
@@ -51,7 +54,7 @@ There are 3 ways to get the setup:
 **_\[ [&uarr;](#top)_ / _[&darr;](#bottom) \]_**<br>
 #### Software
 **_\[ [&uarr;](#top)_ / _[&darr;](#bottom) \]_**<br>
-1. Download an operating System. I have tested it with Noobs and Raspbian stretch.
+1. Download an operating System. I have tested it with Noobs » Raspbian[/[1/]](#footnote_1).
 2. Make sure that your system boots automaticly in Desktop (and logging in) (`sudo raspi-config`, 3 Boot options, B4 Desktop Autologin)
 3. Download the installer
 4. run it as root (`sudo bash /path/to/SmartMirrorGUI.sh`). **Important** is, that you use **sudo** and **bash**, not sh.
@@ -99,6 +102,10 @@ $(chromium-browser "file:///path/to/file.html";python3 /path/to/file.py)
 #if the python file is stopped, execute the next command.
 shutdown 0
 ```
+# Footnotes
+###### Footnote-1
+uname -a:
+```Linux raspberrypi 4.14.30-v7+ #1102 SMP Mon Mar 26 16:45:49 BST 2018 armv7l GNU/Linux```
 # BOTTOM
 _Just ignore that, i didnt found a better way to scroll to the end of the site..._<br>
 [_**\[Top\]**_](#top)
