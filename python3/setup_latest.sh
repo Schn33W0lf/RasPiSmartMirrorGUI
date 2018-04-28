@@ -10,7 +10,7 @@ function pythonLoadModules {
 		echo "          Error:         $1"
 	fi
 }
-pythonSource="https://raw.githubusercontent.com/Schn33W0lf/RasPiSmartMirrorOS/master/python3/SM_GUI_v0.3.4.minimal.py"
+pythonSource="https://raw.githubusercontent.com/Schn33W0lf/RasPiSmartMirrorOS/master/python3/SM_GUI_v0.3.5.minimal.py"
 versionSelected=1
 arrowOpt1L="==>"
 arrowOpt1R="<=="
@@ -99,7 +99,7 @@ $arrowOpt3L #            Exit            # $arrowOpt3R
        crontab
        echo
 [INFO] Destination folder:
-       '/opt/SM_GUI_v0.3.1-py3.5-tk'
+       '/opt/SM_GUI_v0.3.5-py3.5-tk'
 [INFO] File sources:
 ###### Python 3
 '$pythonSource'
@@ -111,39 +111,39 @@ $arrowOpt3L #            Exit            # $arrowOpt3R
 done
 if [ $versionSelected -eq 1 ]; then
 	echo -e "\0033\0143#SETUP#SM#v#0.1.3###############################################################
-     ##### ##### ##### #   # ####    ##### #   #         #####   #####    #   #
-    #     #       #   #   # #   #   #     ## ##         #   #       #    #   #
+     ##### ##### ##### #   # ####    ##### #   #         #####   #####    #####
+    #     #       #   #   # #   #   #     ## ##         #   #       #    #
    ##### #####   #   #   # ####    ##### # # #   #   # # # #   #####    #####
       # #       #   #   # #           # #   #    # #  #   #       #        #
- ##### #####   #   ##### #       ##### #   #     #   ##### # ##### #      #
+ ##### #####   #   ##### #       ##### #   #     #   ##### # ##### #  #####
 ##################################################################by#Schn33W0lf#"
 	read -p "Please write the user name for the SM GUI. leave blank vor the actual user ($USER): " userSelect
 	if [ $userSelect -eq "$USER" ]; then
 		userSelect="$USER"
 	fi
 	echo "
-[CREATE] '/opt/SM_GUI_v0.3.1-py3.5-tk'
+[CREATE] '/opt/SM_GUI_v0.3.5-py3.5-tk'
          SmartMirror directory"
-	mkdir /opt/SM_GUI_v0.3.1-py3.5-tk
+	mkdir /opt/SM_GUI_v0.3.5-py3.5-tk
 	echo "
 [LOAD]   '$pythonSource'
-[CREATE] 'python3 /opt/SM_GUI_v0.3.1-py3.5-tk/SM_GUI_v0.3.1.minimal.py'
+[CREATE] 'python3 /opt/SM_GUI_v0.3.5-py3.5-tk/SM_GUI_v0.3.5.minimal.py'
          '$pythonSource'
 	 Python script"
-	wget $pythonSource --output-document=/opt/SM_GUI_v0.3.1-py3.5-tk/SM_GUI_v0.3.1.minimal.py
+	wget $pythonSource --output-document=/opt/SM_GUI_v0.3.5-py3.5-tk/SM_GUI_v0.3.5.minimal.py
 	echo "
-[CREATE] '/opt/SM_GUI_v0.3.1-py3.5-tk/SMstart.sh'
-         'python3 /opt/SM_GUI_v0.3.1-py3.5-tk/SM_GUI_v0.3.1.py'
+[CREATE] '/opt/SM_GUI_v0.3.5-py3.5-tk/SMstart.sh'
+         'python3 /opt/SM_GUI_v0.3.5-py3.5-tk/SM_GUI_v0.3.5.py'
 	  start shell script"
-	echo -e "sleep 3\npython3 /opt/SM_GUI_v0.3.1-py3.5-tk/SM_GUI_v0.3.1.minimal.py" >> /opt/SM_GUI_v0.3.1-py3.5-tk/SMstart.sh
+	echo -e "sleep 3\npython3 /opt/SM_GUI_v0.3.5-py3.5-tk/SM_GUI_v0.3.5.minimal.py" >> /opt/SM_GUI_v0.3.5-py3.5-tk/SMstart.sh
 	echo "
-[CREATE] /opt/SM_GUI_v0.3.1-py3.5-tk/SM.crontab"
-	echo "@reboot sh /opt/SM_GUI_v0.3.1-py3.5-tk/SMstart.sh" >> /opt/SM_GUI_v0.3.1-py3.5-tk/SM.crontab
+[CREATE] /opt/SM_GUI_v0.3.5-py3.5-tk/SM.crontab"
+	echo "@reboot sh /opt/SM_GUI_v0.3.5-py3.5-tk/SMstart.sh" >> /opt/SM_GUI_v0.3.5-py3.5-tk/SM.crontab
 	echo "
-[USE]    crontab -u $userSelect /opt/SM_GUI_v0.3.1-py3.5-tk/SM.crontab
-         '@reboot 'sh /opt/SM_GUI_v0.3.1-py3.5-tk/SMstart.sh'
+[USE]    crontab -u $userSelect /opt/SM_GUI_v0.3.5-py3.5-tk/SM.crontab
+         '@reboot 'sh /opt/SM_GUI_v0.3.5-py3.5-tk/SMstart.sh'
          Load SMstart.sh after boot"
-	crontab -u $userSelect /opt/SM_GUI_v0.3.1-py3.5-tk/SM.crontab
+	crontab -u $userSelect /opt/SM_GUI_v0.3.5-py3.5-tk/SM.crontab
 	echo "
 [EDIT]   /boot/config.txt
          'display_rotate=3
