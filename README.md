@@ -2,8 +2,8 @@
 _SmartMirror for RaspberryPi_<br>
 [_**\[Bottom\]**_](#bottom)<br>
 **IMPORTANT: v0.4.1 DO NOT USE THE TEMPERATURE SENSORS WITH THE W1 PROTOCOL! GPIO BCM 4 (GPIO BOARD 7) is still used!**
-Will be fixed in V 0.5.0!<br><br>
-**Important:** Actually crontab does'nt do what I want... Run python3 /opt/SM_GUI_v0.3.1-py3.5-tk/SM_GUI_v0.3.1.minimal.py manually <br>
+Will be fixed in V 0.5.0! An other perfboard layout is required (I'll update [the plans](hardware) as soon as I'm finished them)<br><br>
+**Important:** Actually crontab does'nt do what I want... Run python3 /opt/SM_GUI_py3.5-tk/SM_GUI_v0.4.1.minimal.py manually <br>
 Either, I have problems with the timeout of the dispay. Maybe its a problem of my display, maybe I looked for the wrong configs on the Pi.
 ## Content
 **_\[ [&uarr;](#top)_ / _[&darr;](#bottom) \]_**
