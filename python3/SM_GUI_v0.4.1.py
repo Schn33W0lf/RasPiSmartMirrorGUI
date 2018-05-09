@@ -1,4 +1,12 @@
-#python3
+#!/usr/bin/env python3.5
+# -*- coding: utf-8 -*-
+
+##########################
+# SmartMirror GUI v0.4.1 #
+# Beta version           #
+# by Schn33W0lf          #
+##########################
+
 from tkinter import *
 from urllib.request import urlopen
 import os
