@@ -76,6 +76,15 @@ It should look like this:
 [![demo](python3/examples/SmartMirror_weather_example_config.png)](python3/examples/SmartMirror_weather_example_config.png)
 5. Enter your email and copy the last characters (after `https://www.theweather.com/wimages/`) of the link
 6. Paste it in the python script.
+##### Troubles with PIL:
+If you get this Error Message if you run the script:
+```python3
+Traceback (most recent call last):
+  File "/opt/SM_GUI_py3.5-tk/SM_GUI_v0.4.1.py", line 22, in <module>
+    from PIL import ImageTk, Image
+ImportError: cannot import name 'ImageTk'
+```
+Then, PIL isnt installed correctly. `sudo apt-get install python3-pil python3-pil.imagetk` fixed the problem for me ([source](https://stackoverflow.com/a/48170806)).
 #### Hardware
 **_\[ [&uarr;](#top)_ / _[&darr;](#bottom) \]_**<br>
 Basicly, you need the RaspberryPi 3 with a µSD-card and a power supply (I suggest to use the official one (5V_, 2.5A) because because of the voltage drop inside the Pi. More in the RPi Forum and [here](https://www.raspberrypi.org/documentation/hardware/raspberrypi/power/README.md)). Im using the RPi 3 B Rev 1.2<br>
