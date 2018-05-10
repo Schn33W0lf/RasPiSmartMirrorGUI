@@ -74,8 +74,9 @@ There are 3 ways to get the setup:
 [![demo](python3/examples/SmartMirror_weather_example.png)](python3/examples/SmartMirror_weather_example.png)<br>
 It should look like this:
 [![demo](python3/examples/SmartMirror_weather_example_config.png)](python3/examples/SmartMirror_weather_example_config.png)
-5. Enter your email and copy the last characters (after `https://www.theweather.com/wimages/`) of the link
-6. Paste it in the python script.
+5. Enter your email and copy the link to the generated image.
+6. Paste it in the python script. under Ids\[1\] (Line 32, Column 45)
+**Note:** If you want to show the snow line in meters (and not feet), just do the same configuration but in the end in the python script replace `https://theweather.com/...` with `htttps://daswetter.com/...`.
 ##### Troubles with PIL:
 If you get this Error Message if you run the script:
 ```python3
