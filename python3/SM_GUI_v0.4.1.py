@@ -27,8 +27,8 @@ gpio        = ['BCM',               2,  3,  4,  17,     27,     IO.RISING]
 windowSizes = [False,   True,       0.75,       0.75]
 ##            [cartoonX,    cartoonY]
 itemSizes   = [425*0.9,     596*0.9]
-##            [version, weatherId,                              tempSensorCpu,                              tempSensorIn,                       tempSensorOut]
-Ids         = [0.4,     'foto99e83cda40fd2d3cd0a4d11485dffca2', '/sys/class/thermal/thermal_zone0/temp',    '/opt/SM_GUI_py3.5-tk/testtemp1',   '/opt/SM_GUI_py3.5-tk/testtemp2']
+##            [version, weatherId,                                                                  tempSensorCpu,                              tempSensorIn,                       tempSensorOut]
+Ids         = [0.4,     'http://theweather.com/wimages/foto99e83cda40fd2d3cd0a4d11485dffca2.png',  '/sys/class/thermal/thermal_zone0/temp',    '/opt/SM_GUI_py3.5-tk/testtemp1',   '/opt/SM_GUI_py3.5-tk/testtemp2']
 ##            [errors,  warnings,   infos,  debugInfos]
 feedback    = [True,    True,       True,   False]
 texts       = ['Loading . . .', 'Here could be your advertisement! :P']
@@ -242,7 +242,7 @@ def refreshW(refresh=True):
     if refresh == True:
         statusLed(2)
         errorMsg(2, False, 1, 'functions > tick', 'Refreshing Weather')
-        weather_raw = createImg('http://theweather.com/wimages/'+Ids[1]+'.png')
+        weather_raw = createImg(Ids[1])
         weather.config(image=weather_raw)
         weather.image = weather_raw
         statusLed(1)
@@ -284,7 +284,7 @@ root.configure(
     background='black',
     cursor='none'
 )
-weather_raw = createImg('http://theweather.com/wimages/'+Ids[1]+'.png')
+weather_raw = createImg(Ids[1])
 weather = Label(
     root,
     image=weather_raw,
