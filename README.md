@@ -67,15 +67,13 @@ There are 3 ways to get the setup:
 **_\[ [&uarr;](#top)_ / _[&darr;](#bottom) \]_**<br>
 ###### Weather widget
 **_\[ [&uarr;](#top)_ / _[&darr;](#bottom) \]_**<br>
-1. Open the python file (as root) and search for `SmartMirrorGUI.configs`. It should be in Line 108.
-2. Edit the last (`SmartMirrorGUI.configs[7]`) list item. By default it is `foto99e83cda40fd2d3cd0a4d11485dffca2`. Its the default weather image url.
-3. To edit visit https://www.theweather.com/widget/.
-4. Configure the widget like this:
+1. Create a weather widget on https://www.theweather.com/widget/.
+2. Configure the widget like this:
 [![demo](python3/examples/SmartMirror_weather_example.png)](python3/examples/SmartMirror_weather_example.png)<br>
 It should look like this:
 [![demo](python3/examples/SmartMirror_weather_example_config.png)](python3/examples/SmartMirror_weather_example_config.png)
-5. Enter your email and copy the link to the generated image.
-6. Paste it in the python script. under Ids\[1\] (Line 32, Column 45)
+3. Enter your email, chose An image below and copy the link to the generated image.
+4. Paste it in the python script. under Ids\[1\] (Line 32, Column 45)
 **Note:** If you want to show the snow line in meters (and not feet), just do the same configuration but in the end in the python script replace `https://theweather.com/...` with `https://daswetter.com/...`.
 ##### Troubles with PIL:
 If you get this Error Message if you run the script:
