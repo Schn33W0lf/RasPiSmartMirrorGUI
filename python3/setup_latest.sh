@@ -133,6 +133,10 @@ if [ $versionSelected -eq 1 ]; then
          SmartMirror directory"
 	mkdir /opt/SM_GUI_py3.5-tk
 	echo "
+[CREATE] '/opt/SM_GUI_py3.5-tk/logs'
+         SmartMirror logs directory"
+	mkdir /opt/SM_GUI_py3.5-tk/logs
+	echo "
 [LOAD]   '$pythonSource'
 [CREATE] 'python3 /opt/SM_GUI_py3.5-tk/SM_GUI_v$version.py'
          '$pythonSource'
