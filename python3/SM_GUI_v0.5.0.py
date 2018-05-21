@@ -28,12 +28,12 @@ windowSizes = [False,   True,       0.75,       0.75]
 ##            [cartoonX,    cartoonY]
 itemSizes   = [425*0.9,     596*0.9]
 ##            [version, weatherId,                                                                      tempSensorCpu,                              tempSensorIn,                       tempSensorOut,                      infoId]
-Ids         = [0.4,     'http://www.daswetter.com/wimages/foto99e83cda40fd2d3cd0a4d11485dffca2.png',    '/sys/class/thermal/thermal_zone0/temp',    '/opt/SM_GUI_py3.5-tk/testtemp1',   '/opt/SM_GUI_py3.5-tk/testtemp2',   'https://raw.githubusercontent.com/Schn33W0lf/RasPiSmartMirrorOS/master/res/test/headlines.txt']
+Ids         = [0.5,     'http://www.daswetter.com/wimages/foto99e83cda40fd2d3cd0a4d11485dffca2.png',    '/sys/class/thermal/thermal_zone0/temp',    '/opt/SM_GUI_py3.5-tk/testtemp1',   '/opt/SM_GUI_py3.5-tk/testtemp2',   'https://raw.githubusercontent.com/Schn33W0lf/RasPiSmartMirrorOS/master/res/test/headlines.txt']
 ##            [errors,  warnings,   infos,  debugInfos, logFeedback]
 feedback    = [True,    True,       True,   False,      True]
 texts       = ['Loading . . .', 'Here could be your advertisement! :P']
 #FUNCTIONS####################
-logfile = './logs/SM_'+strftime('%Y-%m-%dT%H-%M-%S%z')+'.log'
+logfile = '/opt/SM_GUI_py3.5-tk/logs/SM_'+strftime('%Y-%m-%dT%H-%M-%S%z')+'.log'
 def errorMsg(error=0, force=False, msgType=0, function='functions > errorMsg', value='Unknown Error'):
     time = strftime('%Y-%m-%dT%H-%M-%S%z')  # could use getTime(2) but this function needs to be independent!
     returnMsg = False
