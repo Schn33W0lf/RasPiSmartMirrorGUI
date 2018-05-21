@@ -1,8 +1,6 @@
 first line;
 seperate with semicolons and new lines;
-this ; will be ignored;
-this \n will be ignored;
-this ;\n will be ignored;
+every character will be ignored: ; ;\n \n you see?;
 line
 break;
 last line;
