@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ##########################
-# SmartMirror setup v3.6 #
+# SmartMirror setup v3.7 #
 # for Beta 2 version     #
 # by Schn33W0lf          #
 ##########################
@@ -17,7 +17,7 @@ function pythonLoadModules {
 		echo "          Error:         $1"
 	fi
 }
-version="0.4.1"
+version="0.5.0"
 pythonSource="https://raw.githubusercontent.com/Schn33W0lf/RasPiSmartMirrorOS/master/python3/SM_GUI_v$version.py"
 versionSelected=1
 arrowOpt1L="==>"
