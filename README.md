@@ -21,7 +21,7 @@ Either, I have problems with the timeout of the dispay. Maybe its a problem of m
 | 6. | [python3 GUI (0.3.5)](python3/SM_GUI_v0.3.5.minimal.py) | finished | beta |
 | 7. | [python3 GUI (0.4.0)](python3/SM_GUI_v0.4.0.py) | finished | beta 2 |
 | 7. | [python3 GUI (0.4.1)](python3/SM_GUI_v0.4.1.py) | finished | beta 2 |
-| 7. | [python3 GUI (0.5.0)](python3/SM_GUI_v0.5.0.py) | work in progress | beta 2 |
+| 7. | [python3 GUI (0.5.0)](python3/SM_GUI_v0.5.0.py) | finished | beta 2 |
 | 8. | [html installer]() | work in progress | ? |
 | 9. | [html python3 query]() | work in progress | ? |
 | 10. | [html GUI]() | work in progress | ? |
