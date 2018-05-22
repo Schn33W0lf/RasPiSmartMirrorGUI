@@ -3,4 +3,4 @@ seperate with semicolons and new lines;
 every character will be ignored: ; ;\n \n you see?;
 line
 break;
-last line;
+last line must not have a; semicolon.
