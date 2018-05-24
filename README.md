@@ -150,4 +150,4 @@ Then 'zap' with cat through all sensors and if one is warmer then the rest you h
 Pro tip: Use paper or tape to mark the sensor ;P
 # BOTTOM
 _Just ignore that, i didnt found a better way to scroll to the end of the site..._<br>
-[_**\[Top\]**_](#top)
+[_**\[Top\]**_](#top)<br><br><br><br><br><br><br><br><br><br>
