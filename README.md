@@ -149,5 +149,5 @@ Change the temperature of one of the sensors. E.g. put it next to a light bulb *
 Then 'zap' with cat through all sensors and if one is warmer then the rest you have your first.<br>
 Pro tip: Use paper or tape to mark the sensor ;P
 # BOTTOM
-_Just ignore that, i didnt found a better way to scroll to the end of the site..._<br>
+_Just ignore that, i haven't found a better way to scroll to the end of the site..._<br>
 [_**\[Top\]**_](#top)<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
