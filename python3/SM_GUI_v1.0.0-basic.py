@@ -1,11 +1,11 @@
 #!/usr/bin/env python3.5
 # -*- coding: utf-8 -*-
 
-##########################
-# SmartMirror GUI v0.5.0 #
-# Beta version           #
-# by Schn33W0lf          #
-##########################
+###########################
+# SmartMirror GUI v1.0.0b #
+# Beta version            #
+# by Schn33W0lf           #
+###########################
 
 from tkinter import *
 from urllib.request import urlopen
@@ -22,7 +22,7 @@ from PIL import Image
 from PIL import ImageTk
 #SETTINGS#####################
 ##            [mode('BCM'/'BOARD'), B1, B2, B3, RED,    GRN,    w1-bus-pin (22),    jumper direction(GND:IO.FALLING/VCC:IO.RISING)]
-gpio        = ['BCM',               2,  3,  4,  17,     27,     False,              IO.RISING]
+gpio        = ['BCM',               2,  3,  4,  17,     27,     True,              IO.RISING]
 ##            [zoomed,  fullscreen, windowX,    windowY]
 windowSizes = [False,   True,       0.75,       0.75]
 ##            [cartoonX,    cartoonY]
@@ -30,9 +30,8 @@ itemSizes   = [425*0.9,     596*0.9]
 ##            [version, weatherId,                                                                      tempSensorCpu,                              tempSensorIn,                       tempSensorOut,                      infoId]
 Ids         = [1.0     'http://www.daswetter.com/wimages/foto99e83cda40fd2d3cd0a4d11485dffca2.png',    '/sys/class/thermal/thermal_zone0/temp',    '/opt/SM_GUI_py3.5-tk/testtemp1',   '/opt/SM_GUI_py3.5-tk/testtemp2',   'https://raw.githubusercontent.com/Schn33W0lf/RasPiSmartMirrorOS/master/res/test/headlines.txt']
 ##            [errors,  warnings,   infos,  debugInfos, logFeedback]
-feedback    = [True,    True,       True,   False,      True]
-##          = [time_placeholder,    info_placeholder]
-texts       = ['Loading . . .',     'Here could be your advertisement! :P']
+feedback    = [True,    True,       True,   True,      True]
+texts       = ['Loading . . .', 'Here could be your advertisement! :P']
 ##            [allowshutdown]
 fixes       = [True]
 #FUNCTIONS####################
@@ -202,7 +201,7 @@ def gpioQuery(callback):
         cartoon_label.config(text=cartoon_url.split('_')[1].split('.')[0])
         statusLed(1)
     elif callback == gpio[2]:
-        if fixes[0] == True
+        if fixes[0] == True:
             errorMsg(1, False, 1, 'functions > gpioQuery', 'Shutting down. . .')
             statusLed(2)
             sleep(0.1)
@@ -250,16 +249,16 @@ def tick():
         timeOld = timeNew
     clock.after(200, tick)
 def refreshT():
-    errorMsg(3, False, 1, 'functions > tick', 'Refreshing Temperatures')
+    errorMsg(3, False, 1, 'functions > tick/refreshT', 'Refreshing Temperatures')
     tempCpu.config(text=(round(float(open(Ids[2]).read())/1000, 1),'°C'))
     if gpio[6] == True:
-        tempIns.config(text=(round(float(open(Ids[3]).read())/1000, 1),'°C'))
-        tempOut.config(text=(round(float(open(Ids[4]).read())/1000, 1),'°C'))
+        tempIns.config(text=(round(float(open(Ids[3]).read().split('t=')[1])/1000, 1),'°C'))
+        tempOut.config(text=(round(float(open(Ids[4]).read().split('t=')[1])/1000, 1),'°C'))
     tempCpu.after(5000, refreshT)
 def refreshW(refresh=True):
     if refresh == True:
         statusLed(2)
-        errorMsg(2, False, 1, 'functions > tick', 'Refreshing Weather')
+        errorMsg(2, False, 1, 'functions > tick/refreshW', 'Refreshing Weather')
         weather_raw = createImg(Ids[1])
         weather.config(image=weather_raw)
         weather.image = weather_raw
