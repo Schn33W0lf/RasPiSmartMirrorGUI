@@ -109,7 +109,7 @@ I don't recommend to change anything if you don't know what you're doing.
   - tempSensorIn: the Id and output file (folder name (/sys/bus/w1/devices/XX-XXXXXXXXXXXX/) of the temperature sensor in the inside)
   - tempSensorOut: the Id and output file (folder name (/sys/bus/w1/devices/XX-XXXXXXXXXXXX/) of the temperature sensor in the outside)[They look equal, which one is the right?](#footnote-2)
   - infoId: the URL to the info sheet. You can seperate infos with a semicolon; and a line break. Semicolons, \n's, ... will be ignored.
-- feedback: Do you want to see errors, warnings, infos, debug Infos in your console? Do you want to log the console? (Bool) If you're loggin everything it will be saved in /opt/SmartMirrorGUI(...)/logs/date-time-when-the-gui-was-started.log
+- feedback: Do you want to see errors, warnings, infos, debug Infos in your console? Do you want to log the console? (Bool) If you're logging the console, everything will be saved in /opt/SmartMirrorGUI(...)/logs/date&time-when-the-gui-was-started.log
 - texts:
   - time_...: Placeholder instead of the time until they load.
   - info_...: Placeholder instead of the infos until they load.
