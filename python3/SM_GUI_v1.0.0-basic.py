@@ -31,7 +31,10 @@ itemSizes   = [425*0.9,     596*0.9]
 Ids         = [1.0     'http://www.daswetter.com/wimages/foto99e83cda40fd2d3cd0a4d11485dffca2.png',    '/sys/class/thermal/thermal_zone0/temp',    '/opt/SM_GUI_py3.5-tk/testtemp1',   '/opt/SM_GUI_py3.5-tk/testtemp2',   'https://raw.githubusercontent.com/Schn33W0lf/RasPiSmartMirrorOS/master/res/test/headlines.txt']
 ##            [errors,  warnings,   infos,  debugInfos, logFeedback]
 feedback    = [True,    True,       True,   False,      True]
-texts       = ['Loading . . .', 'Here could be your advertisement! :P']
+##          = [time_placeholder,    info_placeholder]
+texts       = ['Loading . . .',     'Here could be your advertisement! :P']
+##            [allowshutdown]
+fixes       = [True]
 #FUNCTIONS####################
 logfile = '/opt/SM_GUI_py3.5-tk/logs/SM_'+strftime('%Y-%m-%dT%H-%M-%S%z')+'.log'
 def errorMsg(error=0, force=False, msgType=0, function='functions > errorMsg', value='Unknown Error'):
@@ -199,18 +202,32 @@ def gpioQuery(callback):
         cartoon_label.config(text=cartoon_url.split('_')[1].split('.')[0])
         statusLed(1)
     elif callback == gpio[2]:
-        errorMsg(1, False, 1, 'functions > gpioQuery', 'Shutting down. . .')
-        statusLed(2)
-        sleep(0.1)
-        statusLed(1)
-        sleep(0.1)
-        statusLed(2)
-        sleep(0.25)
-        statusLed(1)
-        sleep(1)
-        statusLed(2)
-        #loadGpio('CLEAN', False, [2, 3, 4, 17, 27])
-        os.system('shutdown 0')
+        if fixes[0] == True
+            errorMsg(1, False, 1, 'functions > gpioQuery', 'Shutting down. . .')
+            statusLed(2)
+            sleep(0.1)
+            statusLed(1)
+            sleep(0.1)
+            statusLed(2)
+            sleep(0.25)
+            statusLed(1)
+            sleep(1)
+            statusLed(2)
+            #loadGpio('CLEAN', False, [2, 3, 4, 17, 27])
+            os.system('shutdown 0')
+        elif fixes[0] == False:
+            statusLed(2)
+            sleep(0.5)
+            errorMsg(2, False, 1, 'functions > gpioQuery', 'Tried to shut down but shutdown was disabled.')
+            statusLed(1)
+        else:
+            statusLed(2)
+            sleep(0.5)
+            errorMsg(0, False, 1, 'functions > gpioQuery', 'Invalid fix. \''+str(fixes[0])+'must be type bool, not type '+type(fixes[0])+'\'! Interpreted as True. Waiting 3 seconds till shutdown...')
+            statusLed(1)
+            sleep(3)
+            fixes[0] = True
+            gpioQuery(gpio[2])
     elif callback == gpio[3]:
         errorMsg(2, False, 1, 'functions > gpioQuery', 'Reloading Infos. . .')
         statusLed(2)
