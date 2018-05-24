@@ -43,6 +43,7 @@ Either, I have problems with the timeout of the dispay. Maybe its a problem of m
 | 5. | [Future plans](#future-plans) |
 | 6. | [Troubleshooting](#troubleshooting) |
 | 6.1. | [Troubles with PIL](#troubles-with-pil) |
+| 6.2. | [Known GUI Bugs](#known-gui-bugs) |
 ## About
 **_\[ [&uarr;](#top)_ / _[&darr;](#bottom) \]_**<br>
 The SmartMirrorGUI uses python 3 (Im using 3.5.3) in combination with tkinter to display a black fullscreen with (not :P) useful things on it like the weather, the date and time and a random cartoon from Ruthe.de (or other if you configure it). Further, the CPU-, Inside- and Outside Temperature is displayed (in °C). Below, a text, loaded from the internet is displayed it can be a random joke, an info that you've got messages, some news and other crazy stuff. Actually its loaded from a text file. More details below.
