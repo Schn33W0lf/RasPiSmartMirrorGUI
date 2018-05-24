@@ -38,6 +38,7 @@ Either, I have problems with the timeout of the dispay. Maybe its a problem of m
 | 4.2.1. | [Software](#software) |
 | 4.2.1. | [Configuration (Python)](#configuration-python) |
 | 4.2.1.1. | [Weather Widget](#weather-widget) |
+| 4.2.1.2. | [Settings](#settings) |
 | 4.2.2. | [Hardware](#hardware) |
 | 5. | [Future plans](#future-plans) |
 | 6. | [Troubleshooting](#troubleshooting) |
