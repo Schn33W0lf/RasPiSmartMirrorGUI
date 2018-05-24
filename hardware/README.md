@@ -10,7 +10,7 @@
 | 0V | 9 | reference for the gpios (you can toggle it with the jumper) and ground for the statusLED |
 | 17 | 11 | statusLED Red |
 | 27 | 13 | statusLED Green |
-| 22 | 15 | input 433MHz RF Module |
+| 22 | 15 | 433MHz RF Modules (Transmitter or Receiver) or w1 bus |
 # SmartMirrorHAT Part list
 | No. | Amount | Part description | details
 | --- | --- | --- | --- |
