@@ -1,8 +1,6 @@
 # RasPiSmartMirrorGUI (Python 3)
 _SmartMirror for RaspberryPi_<br>
 [_**\[Bottom\]**_](#bottom)<br>
-**IMPORTANT: v0.4.1 DO NOT USE THE TEMPERATURE SENSORS WITH THE W1 PROTOCOL! GPIO BCM 4 (GPIO BOARD 7) is still used!**
-Will be fixed in V 0.5.0! An other perfboard layout is required (I'll update [the plans](hardware) as soon as I'm finished them)<br><br>
 **Important:** Actually crontab does'nt do what I want... Run python3 /opt/SM_GUI_py3.5-tk/SM_GUI_v0.4.1.minimal.py manually <br>
 Either, I have problems with the timeout of the dispay. Maybe its a problem of my display, maybe I looked for the wrong configs on the Pi.
 ## Content
@@ -13,18 +11,18 @@ Either, I have problems with the timeout of the dispay. Maybe its a problem of m
 | No. | Title | Status | Comment / Description |
 | :--- | :--- | :---: | :---: |
 | 1. | [python3 installer](python3/setup_v3.5.sh) | finished | v3.5 (for alpha/beta: 0.3.1 - 0.3.5, not recommended) |
-| 1. | [python3 installer](python3/setup_latest.sh) | work in progress | v3.6 (for beta2: > 0.4.0, recommended) |
-| 2. | [python3 GUI (0.3.1)](python3/SM_GUI_v0.3.1.minimal.py) | finished | alpha |
-| 3. | [python3 GUI (0.3.2)](python3/SM_GUI_v0.3.2.minimal.py) | finished | alpha |
-| 4. | [python3 GUI (0.3.3)](python3/SM_GUI_v0.3.3.minimal.py) | finished | alpha |
-| 5. | [python3 GUI (0.3.4)](python3/SM_GUI_v0.3.4.minimal.py) | finished | beta |
-| 6. | [python3 GUI (0.3.5)](python3/SM_GUI_v0.3.5.minimal.py) | finished | beta |
-| 7. | [python3 GUI (0.4.0)](python3/SM_GUI_v0.4.0.py) | finished | beta 2 |
-| 7. | [python3 GUI (0.4.1)](python3/SM_GUI_v0.4.1.py) | finished | beta 2 |
-| 7. | [python3 GUI (0.5.0)](python3/SM_GUI_v0.5.0.py) | finished | beta 2 |
-| 8. | [html installer]() | work in progress | ? |
-| 9. | [html python3 query]() | work in progress | ? |
-| 10. | [html GUI]() | work in progress | ? |
+| 2. | [python3 installer](python3/setup_latest.sh) | finished | v3.6 (for beta2: > 0.4.0, recommended) |
+| 3. | [python3 installer](python3/setup_v4.0fbv.sh) | work in progress | v4.0fbv.sh (for all full/ basic versions, >1.0.0) |
+| 4. | [python3 GUI (0.3.1)](python3/SM_GUI_v0.3.1.minimal.py) | finished | alpha |
+| 5. | [python3 GUI (0.3.2)](python3/SM_GUI_v0.3.2.minimal.py) | finished | alpha |
+| 6. | [python3 GUI (0.3.3)](python3/SM_GUI_v0.3.3.minimal.py) | finished | alpha |
+| 7. | [python3 GUI (0.3.4)](python3/SM_GUI_v0.3.4.minimal.py) | finished | beta |
+| 8. | [python3 GUI (0.3.5)](python3/SM_GUI_v0.3.5.minimal.py) | finished | beta |
+| 9. | [python3 GUI (0.4.0)](python3/SM_GUI_v0.4.0.py) | finished | beta 2 |
+| 10. | [python3 GUI (0.4.1)](python3/SM_GUI_v0.4.1.py) | finished | beta 2 |
+| 11. | [python3 GUI (0.5.0)](python3/SM_GUI_v0.5.0.py) | finished | beta 2 |
+| 12. | [python3 GUI (1.0.0b)](python3/SM_GUI_v1.0.0-basic.py) | finished | basic |
+| 13. | [python3 GUI (1.0.0f)](python3/SM_GUI_v1.0.0-full.py) | work in progress | fulll |
 ### Documentation
 **_\[ [&uarr;](#top)_ / _[&darr;](#bottom) \]_**
 
@@ -42,19 +40,19 @@ Either, I have problems with the timeout of the dispay. Maybe its a problem of m
 | 4.2.1.1. | [Weather Widget](#weather-widget) |
 | 4.2.2. | [Hardware](#hardware) |
 | 5. | [Future plans](#future-plans) |
-| 6. | [HTML Version](#html-version-of-the-smartmirrorgui) |
+| 6. | [Troubleshooting](#troubleshooting) |
+| 6.1. | [Troubles with PIL](#troubles-with-pil) |
 ## About
 **_\[ [&uarr;](#top)_ / _[&darr;](#bottom) \]_**<br>
-The SmartMirrorGUI uses python 3 (Im using 3.5.3) in combination with tkinter to display a black fullscreen with (not :P) useful things on it like the weather, the time and a random cartoon from Ruthe.de (or other if you configure it).<br>
-In future I want to display the outside/ inside temperature and the CPU temperature (in °C).
+The SmartMirrorGUI uses python 3 (Im using 3.5.3) in combination with tkinter to display a black fullscreen with (not :P) useful things on it like the weather, the date and time and a random cartoon from Ruthe.de (or other if you configure it). Further, the CPU-, Inside- and Outside Temperature is displayed (in °C). Below, a text, loaded from the internet is displayed it can be a random joke, an info that you've got messages, some news and other crazy stuff. Actually its loaded from a text file. More details below.
 ## Installation
 **_\[ [&uarr;](#top)_ / _[&darr;](#bottom) \]_**<br>
 ### Download setup.sh
 **_\[ [&uarr;](#top)_ / _[&darr;](#bottom) \]_**<br>
 There are 3 ways to get the setup:
-- Download the latest setup [here](python3/setup_latest.sh).
+- Download any setup [here](python3) (Recommended is the [latest](python3/setup_latest.sh) or the [full](python3/setup_v4.0fbv.sh) setup).
 - You can also just copy the text and paste it in any **\*.sh** file.
-- The third option is using **wget** (`wget https://raw.githubusercontent.com/Schn33W0lf/RasPiSmartMirrorOS/master/python3/setup_latest.sh --output-document=/home/$USER/Downloads/SmartMirrorOS_installer.sh`)
+- The third option is using **wget** (`wget https://raw.githubusercontent.com/Schn33W0lf/RasPiSmartMirrorOS/master/python3/setup_latest.sh --output-document=/home/$USER/Downloads/SmartMirrorOS_installer.sh` **or** `wget https://raw.githubusercontent.com/Schn33W0lf/RasPiSmartMirrorOS/master/python3/setup_v4.0fbv.sh --output-document=/home/$USER/Downloads/SmartMirrorOS_installer.sh`).
 ### Required setup
 **_\[ [&uarr;](#top)_ / _[&darr;](#bottom) \]_**<br>
 #### Software
@@ -74,8 +72,18 @@ It should look like this:
 [![demo](python3/examples/SmartMirror_weather_example_config.png)](python3/examples/SmartMirror_weather_example_config.png)
 3. Enter your email, chose An image below and copy the link to the generated image.
 4. Paste it in the python script. under Ids\[1\] (Line 32, Column 45)
-**Note:** If you want to show the snow line in meters (and not feet), just do the same configuration but in the end in the python script replace `https://theweather.com/...` with `https://daswetter.com/...`.
-##### Troubles with PIL:
+**Note:** If you want to show the snow line in meters (and not feet), just do the same configuration but in the end in the python script replace `https://theweather.com/...` with `https://daswetter.com/...` (its the german weather.com site).
+#### Hardware
+**_\[ [&uarr;](#top)_ / _[&darr;](#bottom) \]_**<br>
+Basicly, you need the RaspberryPi 3 with a µSD-card and a power supply (I suggest to use the official one (5V_, 2.5A) because of the voltage drop inside the Pi. More in the RPi Forum and [here](https://www.raspberrypi.org/documentation/hardware/raspberrypi/power/README.md)). Im using the RPi 3 B Rev 1.2<br>
+Additionally you can solder a perfboard or just connect the status LED and switches with jumper wires. You can find circuit diagrams, plans and other infos [here](hardware)
+## Future plans
+**_\[ [&uarr;](#top)_ / _[&darr;](#bottom) \]_**
+- [ ] I want to remote-control the py (eg for an audioplayer, ...)
+- [ ] I want to use a kind of sites in my py script (like [pagepiling](https://alvarotrigo.com/pagePiling/) [\[GitHub\]](https://github.com/alvarotrigo/pagePiling.js)).
+## Troubleshooting
+**_\[ [&uarr;](#top)_ / _[&darr;](#bottom) \]_**
+### Troubles with PIL:
 If you get this Error Message if you run the script:
 ```python3
 Traceback (most recent call last):
@@ -84,37 +92,9 @@ Traceback (most recent call last):
 ImportError: cannot import name 'ImageTk'
 ```
 Then, PIL isnt installed correctly. `sudo apt-get install python3-pil python3-pil.imagetk` fixed the problem for me ([source](https://stackoverflow.com/a/48170806)).
-#### Hardware
-**_\[ [&uarr;](#top)_ / _[&darr;](#bottom) \]_**<br>
-Basicly, you need the RaspberryPi 3 with a µSD-card and a power supply (I suggest to use the official one (5V_, 2.5A) because because of the voltage drop inside the Pi. More in the RPi Forum and [here](https://www.raspberrypi.org/documentation/hardware/raspberrypi/power/README.md)). Im using the RPi 3 B Rev 1.2<br>
-Additionally you can solder a perfboard or just connect the status LED and switches with jumper wires. You can find circuit diagrams, plans and other infos [here](hardware)
-## Future plans
-**_\[ [&uarr;](#top)_ / _[&darr;](#bottom) \]_**
-- [ ] I want to add 2 temperature sensors (inside temp. and outside temp.)
-- [ ] I want to display the CPU temperature
-- [ ] I want to remote-control the py (eg for an audioplayer, ...)
-- [ ] I want to use a kind of sites in my py script (like [pagepiling](https://alvarotrigo.com/pagePiling/) [\[GitHub\]](https://github.com/alvarotrigo/pagePiling.js)).
-# HTML version of the SmartMirrorGUI
-**_\[ [&uarr;](#top)_ / _[&darr;](#bottom) \]_**<br>
-The scripts arent very nice but here the schematic how it works
-```
-GPIO in   GPIO out   remote contriol
-    |         ^            |
-    V         |            V
-        PYTHON SCRIPT
-              |
-              V
-      HTML (& JS & CSS)
-```
-- Download the pagepiling folder including the python 3 file _or_
-- Just download the html & python file and download the pagepiling files [here](https://github.com/alvarotrigo/pagePiling.js) and put the html/ py file in the folder
-- Also create a sh file with:
-```
-#open the html file in chromium & execute the python file.
-$(chromium-browser "file:///path/to/file.html";python3 /path/to/file.py)
-#if the python file is stopped, execute the next command.
-shutdown 0
-```
+### Known GUI Bugs ###
+1. In the past the PI shut down if you run the script by an .desktop file.<br>solution: run it by console
+2. Maybe the PI still shut down.<br>solution: open the python script and comment 
 # Footnotes
 ###### Footnote-1
 ```bash
