@@ -10,19 +10,13 @@ Either, I have problems with the timeout of the dispay. Maybe its a problem of m
 
 | No. | Title | Status | Comment / Description |
 | :--- | :--- | :---: | :---: |
-| 1. | [python3 installer](python3/setup_v3.5.sh) | finished | v3.5 (for alpha/beta: 0.3.1 - 0.3.5, not recommended) |
-| 2. | [python3 installer](python3/setup_latest.sh) | finished | v3.6 (for beta2: > 0.4.0, recommended) |
-| 3. | [python3 installer](python3/setup_v4.0fbv.sh) | work in progress | v4.0fbv.sh (for all full/ basic versions, >1.0.0) |
-| 4. | [python3 GUI (0.3.1)](python3/SM_GUI_v0.3.1.minimal.py) | finished | alpha |
-| 5. | [python3 GUI (0.3.2)](python3/SM_GUI_v0.3.2.minimal.py) | finished | alpha |
-| 6. | [python3 GUI (0.3.3)](python3/SM_GUI_v0.3.3.minimal.py) | finished | alpha |
-| 7. | [python3 GUI (0.3.4)](python3/SM_GUI_v0.3.4.minimal.py) | finished | beta |
-| 8. | [python3 GUI (0.3.5)](python3/SM_GUI_v0.3.5.minimal.py) | finished | beta |
-| 9. | [python3 GUI (0.4.0)](python3/SM_GUI_v0.4.0.py) | finished | beta 2 |
-| 10. | [python3 GUI (0.4.1)](python3/SM_GUI_v0.4.1.py) | finished | beta 2 |
-| 11. | [python3 GUI (0.5.0)](python3/SM_GUI_v0.5.0.py) | finished | beta 2 |
-| 12. | [python3 GUI (1.0.0b)](python3/SM_GUI_v1.0.0-basic.py) | finished | basic |
-| 13. | [python3 GUI (1.0.0f)](python3/SM_GUI_v1.0.0-full.py) | work in progress | fulll |
+| 1. | [python3 installer](python3/setup_latest.sh) | finished | v3.6 (for beta2: > 0.4.0, recommended) |
+| 2. | [python3 installer](python3/setup_v4.0fbv.sh) | work in progress | v4.0fbv.sh (for all full/ basic versions, >1.0.0) |
+| 3. | [python3 GUI (0.4.0)](python3/SM_GUI_v0.4.0.py) | finished | beta 2 |
+| 4. | [python3 GUI (0.4.1)](python3/SM_GUI_v0.4.1.py) | finished | beta 2 |
+| 5. | [python3 GUI (0.5.0)](python3/SM_GUI_v0.5.0.py) | finished | beta 2 |
+| 6. | [python3 GUI (1.0.0b)](python3/SM_GUI_v1.0.0-basic.py) | finished | basic |
+| 7. | [python3 GUI (1.0.0f)](python3/SM_GUI_v1.0.0-full.py) | work in progress | full |
 ### Documentation
 **_\[ [&uarr;](#top)_ / _[&darr;](#bottom) \]_**
 
