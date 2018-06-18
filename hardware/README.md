@@ -1,9 +1,31 @@
 # GPIO Info
-| GPIO (BCM) Pin | GPIO (BOARD) Pin | used for |
+| GPIO (BOARD) Pin | GPIO (BCM) Pin | used for |
 | --- | --- | --- |
-| 2 | 3 | S1 previous |
-| 3 | 5 | S2 reload |
-| 4 | 7 | S3 next |
+| 1 | +3.3V | |
+| 2 | +5V | W1 Pullup, W1 **(+)** |
+| 3 | I-2 | B1 I/O |
+| 4 | +5V | |
+| 5 | I-3 | B2 I/O |
+| 6 | 0V | |
+| 7 | I-4 | B3 I/O |
+| 8 | IO-14 | W1 Data |
+| 9 | 0V | B1 - B3 **(&ndash;)** |
+| 10 | IO-15 | |
+| 11 | O-17 | D1-RED |
+| 12 | IO-18 | |
+| 13 | O-27 | D1-GREEN |
+| 14 | 0V | |
+| 15 | IO-22 | |
+| 16 | IO-23 | |
+| 17 | +3.3V | B1 - B3 Pullup |
+| 18 | IO-24 | |
+| 19 | IO-10 | |
+| 20 | 0V | |
+
+| --- | --- | --- |
+| 2 | 3 | S1 reload image (menu: shutdown)|
+| 3 | 5 | S2 menu (menu: exit menu)|
+| 4 | 7 | S3 reload header (menu: close GUI)|
 | +5V | 1 | power supply for 433MHz RF Module (and B1/B2/B3 - capacitive sensors instead of switches) |
 | +3.3V | 17 |  reference for the gpios (you can toggle it with the jumper) |
 | 0V | 6 | ground for the 433MHz RF Module |
