@@ -10,13 +10,8 @@ Either, I have problems with the timeout of the dispay. Maybe its a problem of m
 
 | No. | Title | Status | Comment / Description |
 | :--- | :--- | :---: | :---: |
-| 1. | [python3 installer](python3/setup_latest.sh) | finished | v3.6 (for beta2: > 0.4.0, recommended) |
-| 2. | [python3 installer](python3/setup_v4.0fbv.sh) | work in progress | v4.0fbv.sh (for all full/ basic versions, >1.0.0) |
-| 3. | [python3 GUI (0.4.0)](python3/SM_GUI_v0.4.0.py) | finished | beta 2 |
-| 4. | [python3 GUI (0.4.1)](python3/SM_GUI_v0.4.1.py) | finished | beta 2 |
-| 5. | [python3 GUI (0.5.0)](python3/SM_GUI_v0.5.0.py) | finished | beta 2 |
-| 6. | [python3 GUI (1.0.0b)](python3/SM_GUI_v1.0.0-basic.py) | finished | basic |
-| 7. | [python3 GUI (1.0.0f)](python3/SM_GUI_v1.0.0-full.py) | work in progress | full |
+| 1. | [python3 installer](python3/setup_v4.0fbv.sh) | work in progress | v4.0fbv.sh (for all full/ basic versions, >1.0.0) |
+| 2. | [python3 GUI (1.0.0b)](python3/SM_GUI_v1.1.0-basic.py) | finished | basic |
 ### Documentation
 **_\[ [&uarr;](#top)_ / _[&darr;](#bottom) \]_**
 
@@ -27,17 +22,19 @@ Either, I have problems with the timeout of the dispay. Maybe its a problem of m
 | 1.2 | [Documentation](#documentation) |
 | 2. | [About](#about) |
 | 3. | [Installation](#installation) |
-| 4.1. | [Download setup.sh](#download-setupsh) |
-| 4.2. | [Required setup](#required-setup) |
-| 4.2.1. | [Software](#software) |
-| 4.2.1. | [Configuration (Python)](#configuration-python) |
-| 4.2.1.1. | [Weather Widget](#weather-widget) |
-| 4.2.1.2. | [Settings](#settings) |
-| 4.2.2. | [Hardware](#hardware) |
-| 5. | [Future plans](#future-plans) |
-| 6. | [Troubleshooting](#troubleshooting) |
-| 6.1. | [Troubles with PIL](#troubles-with-pil) |
-| 6.2. | [Known GUI Bugs](#known-gui-bugs) |
+| 3.1. | [Download setup.sh](#download-setupsh) |
+| 3.2. | [Required setup](#required-setup) |
+| 3.2.1. | [Software](#software) |
+| 3.2.1.1 | [Configuration (Python)](#configuration-python) |
+| 3.2.1.2. | [Weather Widget](#weather-widget) |
+| 3.2.1.3. | [W1 Bus](#w1-bus) |
+| 3.2.1.4. | [Settings](#settings) |
+| 3.2.2. | [Hardware](#hardware) |
+| 4. | [Future plans](#future-plans) |
+| 5. | [Troubleshooting](#troubleshooting) |
+| 5.1. | [Troubles with PIL](#troubles-with-pil) |
+| 5.2. | [Known GUI Bugs](#known-gui-bugs) |
+| footer | [Footnotes](#footnotes) |
 ## About
 **_\[ [&uarr;](#top)_ / _[&darr;](#bottom) \]_**<br>
 The SmartMirrorGUI uses python 3 (Im using 3.5.3) in combination with tkinter to display a black fullscreen with (not :P) useful things on it like the weather, the date and time and a random cartoon from Ruthe.de (or other if you configure it). Further, the CPU-, Inside- and Outside Temperature is displayed (in °C). Below, a text, loaded from the internet is displayed it can be a random joke, an info that you've got messages, some news and other crazy stuff. Actually its loaded from a text file. More details below.
@@ -46,16 +43,16 @@ The SmartMirrorGUI uses python 3 (Im using 3.5.3) in combination with tkinter to
 ### Download setup.sh
 **_\[ [&uarr;](#top)_ / _[&darr;](#bottom) \]_**<br>
 There are 3 ways to get the setup:
-- Download any setup [here](python3) (Recommended is the [latest](python3/setup_latest.sh) or the [full](python3/setup_v4.0fbv.sh) setup).
+- Download any setup_\*.sh [here](python3) (Recommended is the [latest](python3/setup_latest.sh) or the [full](python3/setup_v4.0fbv.sh) setup).
 - You can also just copy the text and paste it in any **\*.sh** file.
 - The third option is using **wget** (`wget https://raw.githubusercontent.com/Schn33W0lf/RasPiSmartMirrorOS/master/python3/setup_latest.sh --output-document=/home/$USER/Downloads/SmartMirrorOS_installer.sh` **or** `wget https://raw.githubusercontent.com/Schn33W0lf/RasPiSmartMirrorOS/master/python3/setup_v4.0fbv.sh --output-document=/home/$USER/Downloads/SmartMirrorOS_installer.sh`).
 ### Required setup
 **_\[ [&uarr;](#top)_ / _[&darr;](#bottom) \]_**<br>
 #### Software
 **_\[ [&uarr;](#top)_ / _[&darr;](#bottom) \]_**<br>
-1. Download an operating System. I have tested it with Noobs » Raspbian [[More Infos]](#footnote-1).
+1. Download an operating System. I have tested the GUI with Noobs » Raspbian [[More Infos]](#footnote-1).
 2. Make sure that your system boots automaticly in Desktop (and logging in) (`sudo raspi-config`, 3 Boot options, B4 Desktop Autologin)
-3. Download the installer
+3. Download the installer ([&uarr;](#download-setupsh))
 4. run it as root (`sudo bash /path/to/SmartMirrorGUI.sh`). **Important** is, that you use **sudo** and **bash**, not sh.
 ##### Configuration (python)
 **_\[ [&uarr;](#top)_ / _[&darr;](#bottom) \]_**<br>
@@ -66,9 +63,14 @@ There are 3 ways to get the setup:
 [![demo](python3/examples/SmartMirror_weather_example.png)](python3/examples/SmartMirror_weather_example.png)<br>
 It should look like this:
 [![demo](python3/examples/SmartMirror_weather_example_config.png)](python3/examples/SmartMirror_weather_example_config.png)
-3. Enter your email, chose An image below and copy the link to the generated image.
-4. Paste it in the python script. under Ids\[1\] (Line 32, Column 45)
-**Note:** If you want to show the snow line in meters (and not feet), just do the same configuration but in the end in the python script replace `https://theweather.com/...` with `https://daswetter.com/...` (its the german weather.com site).
+3. Enter your email, chose an image below and copy the link to the generated image.
+4. Paste it in the python script. under Ids\[1\] (Line 31, Column 25 - line & column numbers could be different)
+**Note:** If you want to show the snow line in meters (and not feet), just do the same configuration but in the end in the python script replace `https://theweather.com/...` with `https://daswetter.com/...` (it's the german theweather.com site).
+###### W1 Bus
+**_\[ [&uarr;](#top)_ / _[&darr;](#bottom) \]_**<br>
+1. navigate to `/sys/bus/w1/devices/` and note the 2 IDs displayed. they should look like 28-XXXXXXXXXXXX.
+2. enter both IDs in the script at IDs\[3\] and IDs\[4\] (Line 31, Column 149/ 197 - line & column numbers could be different)
+3. If you dont know which one is the right sensor (inside/outside), look [here](#footnote-2)
 ##### Settings
 **_\[ [&uarr;](#top)_ / _[&darr;](#bottom) \]_**<br>
 In the python script line 23-38 are some settings;
@@ -99,7 +101,7 @@ I don't recommend to change anything if you don't know what you're doing.
 - Ids
   - version Nr: Only change the nr (type = **float**!) if you have changed something and want to share.
   - weatherId: the image URL of the weather plugin generated by weather.com
-  - tempSensorCpu: the 
+  - tempSensorCpu: the CPU temperature. Dont change.
   - tempSensorIn: the Id and output file (folder name (/sys/bus/w1/devices/XX-XXXXXXXXXXXX/) of the temperature sensor in the inside)
   - tempSensorOut: the Id and output file (folder name (/sys/bus/w1/devices/XX-XXXXXXXXXXXX/) of the temperature sensor in the outside)[They look equal, which one is the right?](#footnote-2)
   - infoId: the URL to the info sheet. You can seperate infos with a semicolon; and a line break. Semicolons, \n's, ... will be ignored.
