@@ -23,9 +23,9 @@
 | 20 | 0V | |
 
 | --- | --- | --- |
-| 2 | 3 | S1 reload image (menu: shutdown)|
-| 3 | 5 | S2 menu (menu: exit menu)|
-| 4 | 7 | S3 reload header (menu: close GUI)|
+| 2 | 3 | S1 reload image (menu: shutdown) |
+| 3 | 5 | S2 menu (menu: exit menu) |
+| 4 | 7 | S3 reload header (menu: close GUI) |
 | +5V | 1 | power supply for 433MHz RF Module (and B1/B2/B3 - capacitive sensors instead of switches) |
 | +3.3V | 17 |  reference for the gpios (you can toggle it with the jumper) |
 | 0V | 6 | ground for the 433MHz RF Module |
