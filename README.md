@@ -71,7 +71,7 @@ It should look like this:
 1. navigate to `/sys/bus/w1/devices/` and note the 2 IDs displayed. they should look like 28-XXXXXXXXXXXX.
 2. enter both IDs in the script at IDs\[3\] and IDs\[4\] (Line 31, Column 149/ 197 - line & column numbers could be different)
 3. If you dont know which one is the right sensor (inside/outside), look [here](#footnote-2)
-##### Settings
+###### Settings
 **_\[ [&uarr;](#top)_ / _[&darr;](#bottom) \]_**<br>
 In the python script line 23-38 are some settings;
 ```python
