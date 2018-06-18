@@ -1,31 +1,32 @@
 # GPIO Info
-| GPIO (BOARD) Pin | GPIO (BCM) Pin | used for |
-| --- | --- | --- |
-| 1 | +3.3V | |
-| 2 | +5V | W1 Pullup, W1 **(+)** |
-| 3 | I-2 | B1 I/O |
-| 4 | +5V | _unused_ |
-| 5 | I-3 | B2 I/O |
-| 6 | 0V | W1 **(&ndash;)** |
-| 7 | I-4 | B3 I/O |
-| 8 | IO-14 | W1 Data |
-| 9 | 0V | B1 - B3 **(&ndash;)** |
-| 10 | IO-15 | |
-| 11 | O-17 | D1-RED |
-| 12 | IO-18 | |
-| 13 | O-27 | D1-GREEN |
-| 14 | 0V | |
-| 15 | IO-22 | |
-| 16 | IO-23 | |
-| 17 | +3.3V | B1 - B3 **(+)**, B1 - B3 Pullup |
-| 18 | IO-24 | |
-| 19 | IO-10 | |
-| 20 | 0V | |
+| GPIO (BOARD) Pin | GPIO (BCM) Pin | Used for | | Action |
+| --- | --- | --- | --- | --- |
+| 1 | +3.3V | | | |
+| 2 | +5V | W1 Pullup, W1 **(+)** | | |
+| 3 | I-2 | B1 I/O | | Reload image (Menu: Shutdown) |
+| 4 | +5V | _?433MHz **(+)**?_ | | |
+| 5 | I-3 | B2 I/O | | Enter Menu (Menu: Exit Menu) |
+| 6 | 0V | W1 **(&ndash;)** | | |
+| 7 | I-4 | B3 I/O | | Reload header (Menu: Exit GUI) |
+| 8 | IO-14 | W1 Data | | Get temperatures |
+| 9 | 0V | B1 - B3 **(&ndash;)** | | |
+| 10 | IO-15 | | | |
+| 11 | O-17 | D1-RED | | statusLed('RED') |
+| 12 | IO-18 | | | |
+| 13 | O-27 | D1-GREEN | | statusLed('GRN') |
+| 14 | 0V | _?433MHz **(&ndash;)**?_ | | |
+| 15 | IO-22 | _?433MHz I/O?_ | | _?_ |
+| 16 | IO-23 | | | |
+| 17 | +3.3V | B1 - B3 **(+)**, B1 - B3 Pullup | | |
+| 18 | IO-24 | | | |
+| 19 | IO-10 | | | |
+| 20 | 0V | | | |
 
+| Input | action |
 | --- | --- | --- |
-| 2 | 3 | S1 reload image (menu: shutdown) |
-| 3 | 5 | S2 menu (menu: exit menu) |
-| 4 | 7 | S3 reload header (menu: close GUI) |
+| 3 | 2 | S1 reload image (menu: shutdown) |
+| 5 | 3 | S2 menu (menu: exit menu) |
+| 7 | 4444 | S3 reload header (menu: close GUI) |
 | +5V | 1 | power supply for 433MHz RF Module (and B1/B2/B3 - capacitive sensors instead of switches) |
 | +3.3V | 17 |  reference for the gpios (you can toggle it with the jumper) |
 | 0V | 6 | ground for the 433MHz RF Module |
