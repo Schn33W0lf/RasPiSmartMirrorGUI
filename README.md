@@ -115,7 +115,7 @@ I don't recommend to change anything if you don't know what you're doing.
 Basicly, you need the RaspberryPi 3 with a µSD-card and a power supply (I suggest to use the official one (5V_, 2.5A) because of the voltage drop inside the Pi. More in the RPi Forum and [here](https://www.raspberrypi.org/documentation/hardware/raspberrypi/power/README.md)). Im using the RPi 3 B Rev 1.2<br>
 Additionally you can solder a perfboard or just connect the status LED, sensors and switches with jumper wires. You can find circuit diagrams, plans and other infos [here](hardware)<br>
 Additionally you need the right display. Mine is from an old Laptop in combination with a Driverboard.<br>
-The GUI is designed for exactly this display. It has 1280px*800px ( ≙ [WXGA	16:10	1280	800](https://en.wikipedia.org/wiki/Display_resolution#Common_display_resolutions)) If you use e.g. a 4:3 display, you dont see everything of the GUI.<br>_more tests with different resolutions comming soon..._
+The GUI is designed for exactly this display. It has 1280px\*800px ( ≙ WXGA	16:10	1280px\*800px) If you use e.g. a 4:3 display, you dont see everything of the GUI.<br>_more tests with different resolutions comming soon..._
 ## Future plans
 **_\[ [&uarr;](#top)_ / _[&darr;](#bottom) \]_**
 - [ ] I want to remote-control the py (eg for an audioplayer, ...)
